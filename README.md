@@ -84,3 +84,43 @@ h1 {
 ## STYLING TEXT
 
 - **font-size**: Property is used to specify the size of the text/font.
+
+  - Absolute sizes:px:
+
+    - Pixels offers fixed and precise control over the font size.-
+    - xx-small, x-small, small, medium, large, x-large, xx-large. These keywords has a predefined set of sizes in browsers.
+
+  - Relative sizes:
+    - em: This unit is relative to the font size of the parent element.
+
+```
+<div style="font-size: 20px;">
+  <p style="font-size: 1.5em;">Text này = 1.5 × 20px = 30px</p>
+</div>
+```
+
+    - rem: This unit is relative to the font size of the root HTML element.
+
+```
+<html style="font-size: 16px;">
+  <div style="font-size: 40px;">
+    <p style="font-size: 2rem;">Text này = 2 × 16px = 32px</p>
+  </div>
+</html>
+```
+
+    - %: This unit is relative to the font size of the parent element
+      smaller and larger: These units adjust the font size relative to the parent element.
+
+```
+<div style="font-size: 20px;">
+  <p style="font-size: 150%;">Text này = 150% × 20px = 30px</p>
+</div>
+
+```
+
+```
+h1 {
+  font-size: 40px;
+}
+```
