@@ -31,8 +31,10 @@
   - [CSS inheritance](#css-inheritance)
     - [Basic Concept](#basic-concept)
     - [Using Inheritance on body](#using-inheritance-on-body)
+    - [Inheritance on a Smaller Scale](#inheritance-on-a-smaller-scale)
     - [Not All Properties Are Inherited](#not-all-properties-are-inherited)
     - [Universal Selector vs. body](#universal-selector-vs-body)
+    - [Key Takeaways](#key-takeaways)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -517,7 +519,7 @@ selector {
 
 - Inheritance is a mechanism in CSS where some properties are passed from a parent element to its child elements.
 
-- Example: A <strong> inside a <p> inherits text-related properties like font-size, font-style, line-height from the <p>.
+- Example: A `<strong>` inside a `<p>` inherits text-related properties like font-size, font-style, line-height from the `<p>`.
 
 ### Using Inheritance on body
 
@@ -525,6 +527,10 @@ selector {
 - Setting text-related properties (color, font-family, font-size) on body allows them to be inherited by all child elements.
 - Child elements without their own declarations will use these values.
 - If a child element has its own value, it overrides the inherited one.
+
+### Inheritance on a Smaller Scale
+
+- Inheritance can be applied to any container, not just body
 
 ### Not All Properties Are Inherited
 
@@ -542,3 +548,11 @@ selector {
 | \* (universal) | Applies directly to all elements | For properties that do not inherit (border, margin, padding, etc.) |
 
 - The universal selector (\*) has the lowest priority and can be easily overridden by other selectors.
+
+### Key Takeaways
+
+- Use body to declare basic text properties.
+
+- Not all properties inherit → use universal selector if needed for non-inherited properties.
+
+- Inherited values are easily overridden by more specific rules (higher specificity, inline style, !important).
