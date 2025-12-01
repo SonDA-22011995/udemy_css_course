@@ -92,14 +92,15 @@ h1 {
 
   - Relative sizes:
     - em: This unit is relative to the font size of the parent element.
+    - rem: This unit is relative to the font size of the root HTML element.
+    - %: This unit is relative to the font size of the parent element
+      smaller and larger: These units adjust the font size relative to the parent element.
 
 ```
 <div style="font-size: 20px;">
   <p style="font-size: 1.5em;">Text này = 1.5 × 20px = 30px</p>
 </div>
 ```
-
-    - rem: This unit is relative to the font size of the root HTML element.
 
 ```
 <html style="font-size: 16px;">
@@ -108,9 +109,6 @@ h1 {
   </div>
 </html>
 ```
-
-    - %: This unit is relative to the font size of the parent element
-      smaller and larger: These units adjust the font size relative to the parent element.
 
 ```
 <div style="font-size: 20px;">
