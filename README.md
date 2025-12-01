@@ -168,13 +168,23 @@ h1 {
 }
 ```
 
-- **font-family**: property specifies the font for an element.
-
 ```
 p.normal {
   font-style: normal;
 }
 ```
+
+```
+p.a {
+  font-family: "Times New Roman", Times, serif;
+}
+
+p.b {
+  font-family: Arial, Helvetica, sans-serif;
+}
+```
+
+- **font-family**: property specifies the font for an element.
 
 - **text-transform**: property is used to control the capitalization of text in an element.
 
