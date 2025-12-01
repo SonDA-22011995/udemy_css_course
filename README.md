@@ -122,3 +122,17 @@ h1 {
   font-size: 40px;
 }
 ```
+
+- **font-family**: property specifies the font for an element.
+
+```
+p.normal {
+  font-style: normal;
+}
+```
+
+- **text-transform**
+  - none - No transformation. Text renders as it is
+  - capitalize - Transforms the first character of each word to uppercase
+  - uppercase - Transforms all characters to uppercase
+  - lowercase - Transforms all characters to lowercase
