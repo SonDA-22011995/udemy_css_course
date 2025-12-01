@@ -15,6 +15,14 @@
       - [Subsequent-sibling Combinator (~)](#subsequent-sibling-combinator-)
     - [CSS Pseudo-classes](#css-pseudo-classes)
     - [CSS Pseudo-elements](#css-pseudo-elements)
+    - [CSS Attribute Selectors](#css-attribute-selectors)
+      - [CSS \[attribute\] Selector](#css-attribute-selector)
+      - [CSS \[attribute="value"\] Selector](#css-attributevalue-selector)
+      - [CSS \[attribute~="value"\] Selector](#css-attributevalue-selector-1)
+      - [CSS \[attribute|="value"\] Selector](#css-attributevalue-selector-2)
+      - [CSS \[attribute^="value"\] Selector](#css-attributevalue-selector-3)
+      - [CSS \[attribute$="value"\] Selector](#css-attributevalue-selector-4)
+      - [CSS \[attribute\*="value"\] Selector](#css-attributevalue-selector-5)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -372,3 +380,77 @@ h2::before {
 | ::view-transition-image-pair | ::view-transition-image-pair              | Represents a container for a view transition's "old" and "new" view states - before and after the transition |
 | ::view-transition-new        | ::view-transition-new                     | Represents the "new" view state of a view transition                                                         |
 | ::view-transition-old        | ::view-transition-old                     | Represents the "old" view state of a view transition                                                         |
+
+### CSS Attribute Selectors
+
+- CSS attribute selectors are used to select and style HTML elements with a specific attribute or attribute value, or both.
+
+#### CSS [attribute] Selector
+
+- The [attribute] selector is used to select elements with a specific attribute.
+
+```
+a[target] {
+  background-color: yellow;
+}
+```
+
+#### CSS [attribute="value"] Selector
+
+- The [attribute="value"] selector is used to select elements with a specific attribute with an exact value.
+
+```
+a[target="_blank"] {
+  background-color: yellow;
+}
+```
+
+#### CSS [attribute~="value"] Selector
+
+- The [attribute~="value"] selector is used to select elements with an attribute value containing a specific word.
+
+```
+[title~="flower"] {
+  border: 5px solid yellow;
+}
+```
+
+#### CSS [attribute|="value"] Selector
+
+- The [attribute|="value"] selector is used to select elements with the specific attribute, whose value can be exactly the specific value, or start with the specific value followed by a hyphen (-).
+
+```
+[class|="top"] {
+  background: yellow;
+}
+```
+
+#### CSS [attribute^="value"] Selector
+
+- The [attribute^="value"] selector is used to select elements with the specific attribute, whose value starts with a specific value.
+
+```
+[class^="top"] {
+  background: yellow;
+}
+```
+
+#### CSS [attribute$="value"] Selector
+
+- The [attribute$="value"] selector is used to select elements whose attribute value ends with a specific value.
+
+```
+[class$="test"] {
+  background: yellow;
+}
+```
+
+#### CSS [attribute*="value"] Selector
+
+- The [attribute*="value"] selector is used to select elements whose attribute value contains a specific value.
+
+```
+[class*="te"] {
+  background: yellow;
+}
+```
