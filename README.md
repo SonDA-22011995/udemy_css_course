@@ -27,6 +27,7 @@
     - [RGB / RGBA NOTATION](#rgb--rgba-notation)
     - [HEXADECIMAL NOTATION](#hexadecimal-notation)
   - [CONFLICTING SELECTORS AND DECLARATIONS](#conflicting-selectors-and-declarations)
+    - [Important CSS rule](#important-css-rule)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -485,11 +486,22 @@ v
 ID (#) selector -> Multiple -> Last selector in code applies
 |
 v
-Class (.) or pseudo-class (:) selector -> Multiple -> Last selector in code applies
+Class (.) -> Multiple -> Last selector in code applies
+|
+v
+Pseudo-class (:) selector -> Multiple -> Last selector in code applies
 |
 v
 Element selector (p, div, li, etc.) -> Multiple -> Last selector in code applies
 |
 v
 Universal selector (\*)
+```
+
+### Important CSS rule
+
+```
+selector {
+  property: value !important;
+}
 ```
