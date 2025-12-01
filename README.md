@@ -14,6 +14,8 @@
       - [Next Sibling Combinator (+)](#next-sibling-combinator-)
       - [Subsequent-sibling Combinator (~)](#subsequent-sibling-combinator-)
     - [CSS Pseudo-classes](#css-pseudo-classes)
+    - [CSS Pseudo-elements](#css-pseudo-elements)
+- [CSS Pseudo-elements](#css-pseudo-elements-1)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -322,3 +324,54 @@ selector:pseudo-class-name {
 | :valid              | input:valid                                         | Selects input elements with valid value                                    |
 | :visited            | a:visited, area:visited                             | Selects all visited links                                                  |
 | :where()            | :where(ol, ul)                                      | Selects all <ul> and <ol> elements                                         |
+
+### CSS Pseudo-elements
+
+- A CSS pseudo-element is a keyword that can be added to a selector, to style a specific part of an element.
+
+```
+selector::pseudo-element-name {
+  CSS properties
+}
+```
+
+- Example
+
+```
+h2::before {
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
+}
+```
+
+- The table below shows the different pseudo-elements in CSS:
+
+# CSS Pseudo-elements
+
+| Pseudo-element               | Example                                   | Example description                                                                                          |
+| ---------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| ::after                      | p::after, div::after                      | Inserts something after the content of the specified element                                                 |
+| ::backdrop                   | dialog::backdrop                          | Styles the viewbox behind a dialog box or popover element                                                    |
+| ::before                     | p::before, div::before                    | Inserts something before the content of the specified element                                                |
+| ::file-selector-button       | ::file-selector-button                    | Selects any button of type <input type="file">                                                               |
+| ::first-letter               | p::first-letter                           | Selects the first letter of every <p> element                                                                |
+| ::first-line                 | p::first-line                             | Selects the first line of every <p> element                                                                  |
+| ::grammar-error              | ::grammar-error                           | Styles text flagged as grammatically incorrect by the browser                                                |
+| ::highlight()                | ::highlight(custom-name)                  | Selects a custom highlight                                                                                   |
+| ::marker                     | ::marker                                  | Selects the markers of list items                                                                            |
+| ::placeholder                | input::placeholder, textarea::placeholder | Styles the placeholder text of <input> or <textarea> elements                                                |
+| ::selection                  | ::selection                               | Styles the user-selected text                                                                                |
+| ::spelling-error             | ::spelling-error                          | Styles text flagged as incorrectly spelled by the browser                                                    |
+| ::view-transition            | ::view-transition                         | Represents the root of the view transitions overlay, containing all view transitions on the page             |
+| ::view-transition-group      | ::view-transition-group                   | Represents a single view transition snapshot group                                                           |
+| ::view-transition-image-pair | ::view-transition-image-pair              | Represents a container for a view transition's "old" and "new" view states - before and after the transition |
+| ::view-transition-new        | ::view-transition-new                     | Represents the "new" view state of a view transition                                                         |
+| ::view-transition-old        | ::view-transition-old                     | Represents the "old" view state of a view transition                                                         |
