@@ -475,6 +475,7 @@ rgb(0, 255, 255)
 
 ## CONFLICTING SELECTORS AND DECLARATIONS
 
+```
 Declarations marked !important
 |
 v
@@ -491,3 +492,4 @@ Element selector (p, div, li, etc.) -> Multiple -> Last selector in code applies
 |
 v
 Universal selector (\*)
+```
