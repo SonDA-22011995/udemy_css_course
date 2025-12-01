@@ -15,7 +15,6 @@
       - [Subsequent-sibling Combinator (~)](#subsequent-sibling-combinator-)
     - [CSS Pseudo-classes](#css-pseudo-classes)
     - [CSS Pseudo-elements](#css-pseudo-elements)
-- [CSS Pseudo-elements](#css-pseudo-elements-1)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -353,8 +352,6 @@ h2::before {
 ```
 
 - The table below shows the different pseudo-elements in CSS:
-
-# CSS Pseudo-elements
 
 | Pseudo-element               | Example                                   | Example description                                                                                          |
 | ---------------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
