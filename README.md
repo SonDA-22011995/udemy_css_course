@@ -35,6 +35,15 @@
     - [Not All Properties Are Inherited](#not-all-properties-are-inherited)
     - [Universal Selector vs. body](#universal-selector-vs-body)
     - [Key Takeaways](#key-takeaways)
+  - [Types of boxes in CSS](#types-of-boxes-in-css)
+    - [Block-level Boxes](#block-level-boxes)
+    - [INLINE ELEMENTS](#inline-elements)
+    - [INLINE-BLOCK BOXES](#inline-block-boxes)
+  - [ABSOLUTE POSITIONING](#absolute-positioning)
+    - [Normal Flow (default flow)](#normal-flow-default-flow)
+    - [ABSOLUTE POSITIONING](#absolute-positioning-1)
+    - [Example](#example)
+  - [THE CSS BOX MODEL](#the-css-box-model)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -556,3 +565,82 @@ selector {
 - Not all properties inherit → use universal selector if needed for non-inherited properties.
 
 - Inherited values are easily overridden by more specific rules (higher specificity, inline style, !important).
+
+## Types of boxes in CSS
+
+### Block-level Boxes
+
+- Elements are formatted visually as blocks
+
+- Elements occupy 100% of parent element’s width,
+  no matter the content
+
+- Elements are stacked vertically by default, one
+  after another
+
+- The box-model applies as showed earlier
+
+- Default for most elements: body, main, header,footer, section, nav, aside, div, h1-h6,p, ul, ol, li, etc..With CSS: display: block
+
+### INLINE ELEMENTS
+
+- Occupies only the space necessary for its content
+- Causes no line-breaks after or before the element
+- Box model applies in a different way: heights and
+  widths do not apply
+- Paddings and margins are applied only
+  horizontally (left and right)
+- Default for most elements: a, img, strong, em, button, etc.With CSS: display: block
+
+### INLINE-BLOCK BOXES
+
+- Looks like inline from the outside, behaves like blocklevel on the inside
+- Occupies only content’s space
+- Causes no line-breaks
+- Box-model applies as showed
+- With CSS: display: inline-block
+
+## ABSOLUTE POSITIONING
+
+### Normal Flow (default flow)
+
+- Default positioning
+- Element is “in flow”
+- Elements are simply laid out according to their order in the HTML code
+- `position: relative`
+
+### ABSOLUTE POSITIONING
+
+- Element is removed from the normal flow: “out of flow”
+- No impact on surrounding elements, might overlap them
+- We use top, bottom, left, or right to offset the element from its relatively positioned container
+- `position: absolute`
+
+### Example
+
+```
+/* parent container */
+.container {
+ position: relative;
+ background-color: #f7e6c1;
+}
+
+/* child container */
+el {
+ position: absolute;
+ top: 100px;
+ left: 200px;
+ background-color: #f4b33f;
+}
+
+```
+
+## THE CSS BOX MODEL
+
+- Content: Text, images, etc.
+- Border: A line around the element, still inside of the element
+- Padding: Invisible space around the content, inside of the element
+- Margin: Space outside of the element, between elements
+- Fill area: Area that gets filled with background color or background image
+- Final element width = left border + left padding + width + right padding + right border
+- Final element height = top border + top padding + height + bottom padding + bottom border
