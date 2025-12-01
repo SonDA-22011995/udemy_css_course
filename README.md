@@ -131,7 +131,7 @@ p.normal {
 }
 ```
 
-- **text-transform**
+- **text-transform**: property is used to control the capitalization of text in an element.
   - none - No transformation. Text renders as it is
   - capitalize - Transforms the first character of each word to uppercase
   - uppercase - Transforms all characters to uppercase
