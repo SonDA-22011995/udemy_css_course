@@ -44,6 +44,13 @@
     - [ABSOLUTE POSITIONING](#absolute-positioning-1)
     - [Example](#example)
   - [THE CSS BOX MODEL](#the-css-box-model)
+- [Section 2: LAYOUTS: FLOATS, FLEXBOX, AND CSS GRID FUNDAMENTALS](#section-2-layouts-floats-flexbox-and-css-grid-fundamentals)
+  - [WHAT DOES “LAYOUT” MEAN?](#what-does-layout-mean)
+    - [Layout](#layout)
+    - [THE 3 WAYS OF BUILDING LAYOUTS WITH CSS](#the-3-ways-of-building-layouts-with-css)
+      - [FLOAT LAYOUTS](#float-layouts)
+      - [FLEXBOX](#flexbox)
+      - [CSS GRID](#css-grid)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -646,3 +653,27 @@ el {
 - Final element height = top border + top padding + height + bottom padding + bottom border
 
 ![Diagram](./static/image/lecture_0001.png)
+
+# Section 2: LAYOUTS: FLOATS, FLEXBOX, AND CSS GRID FUNDAMENTALS
+
+## WHAT DOES “LAYOUT” MEAN?
+
+### Layout
+
+- Layout is the way text, images and other content is placed and arranged on a webpage
+- Layout gives the page a visual structure, into which we place our content
+- Building a layout: arranging page elements into a visual structure instead of simply having them placed one after another (normal flow)
+
+### THE 3 WAYS OF BUILDING LAYOUTS WITH CSS
+
+#### FLOAT LAYOUTS
+
+- The old way of building layouts of all sizes, using the float CSS property. Still used, but getting outdated fast.
+
+#### FLEXBOX
+
+- Modern way of laying out elements in a 1-dimensional row without using floats. Perfect for component layouts
+
+#### CSS GRID
+
+- For laying out element in a fully-fledged 2-dimensional grid. Perfect for page layouts and complex components.
