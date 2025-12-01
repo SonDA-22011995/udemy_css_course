@@ -644,3 +644,5 @@ el {
 - Fill area: Area that gets filled with background color or background image
 - Final element width = left border + left padding + width + right padding + right border
 - Final element height = top border + top padding + height + bottom padding + bottom border
+
+![Diagram](.static/image/lecture_0001.png)
