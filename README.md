@@ -28,6 +28,11 @@
     - [HEXADECIMAL NOTATION](#hexadecimal-notation)
   - [CONFLICTING SELECTORS AND DECLARATIONS](#conflicting-selectors-and-declarations)
     - [Important CSS rule](#important-css-rule)
+  - [CSS inheritance](#css-inheritance)
+    - [Basic Concept](#basic-concept)
+    - [Using Inheritance on body](#using-inheritance-on-body)
+    - [Not All Properties Are Inherited](#not-all-properties-are-inherited)
+    - [Universal Selector vs. body](#universal-selector-vs-body)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -505,3 +510,35 @@ selector {
   property: value !important;
 }
 ```
+
+## CSS inheritance
+
+### Basic Concept
+
+- Inheritance is a mechanism in CSS where some properties are passed from a parent element to its child elements.
+
+- Example: A <strong> inside a <p> inherits text-related properties like font-size, font-style, line-height from the <p>.
+
+### Using Inheritance on body
+
+- body is the parent of all elements on the page.
+- Setting text-related properties (color, font-family, font-size) on body allows them to be inherited by all child elements.
+- Child elements without their own declarations will use these values.
+- If a child element has its own value, it overrides the inherited one.
+
+### Not All Properties Are Inherited
+
+- Mainly text-related properties are inherited: color, font-family, font-size, font-style, etc.
+
+- Layout/box properties are not inherited: border, margin, padding, width, height.
+
+  - Example: border-top set on body does not affect child elements.
+
+### Universal Selector vs. body
+
+| Selector       | Mechanism                        | When to Use                                                        |
+| -------------- | -------------------------------- | ------------------------------------------------------------------ |
+| body           | Inheritance                      | For properties that are inherited (text-related)                   |
+| \* (universal) | Applies directly to all elements | For properties that do not inherit (border, margin, padding, etc.) |
+
+- The universal selector (\*) has the lowest priority and can be easily overridden by other selectors.
