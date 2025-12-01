@@ -14,7 +14,6 @@
       - [Next Sibling Combinator (+)](#next-sibling-combinator-)
       - [Subsequent-sibling Combinator (~)](#subsequent-sibling-combinator-)
     - [CSS Pseudo-classes](#css-pseudo-classes)
-- [CSS Pseudo-classes](#css-pseudo-classes-1)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -266,7 +265,7 @@ selector:pseudo-class-name {
 }
 ```
 
-# CSS Pseudo-classes
+- The table below lists all the pseudo-class keywords in CSS:
 
 | Pseudo-class        | Examples                                            | Example description                                                        |
 | ------------------- | --------------------------------------------------- | -------------------------------------------------------------------------- |
