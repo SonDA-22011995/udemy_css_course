@@ -4,6 +4,8 @@
   - [HOW TO ADD CSS](#how-to-add-css)
     - [External CSS](#external-css)
     - [Internal CSS](#internal-css)
+    - [Inline CSS](#inline-css)
+  - [STYLING TEXT](#styling-text)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -33,15 +35,13 @@ h1 {
 ```
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" href="mystyle.css">
-</head>
-<body>
-
-<h1>This is a heading</h1>
-<p>This is a paragraph.</p>
-
-</body>
+  <head>
+    <link rel="stylesheet" href="mystyle.css" />
+  </head>
+  <body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+  </body>
 </html>
 ```
 
@@ -50,23 +50,37 @@ h1 {
 ```
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-body {
-  background-color: linen;
-}
+  <head>
+    <style>
+      body {
+        background-color: linen;
+      }
 
-h1 {
-  color: maroon;
-  margin-left: 40px;
-}
-</style>
-</head>
-<body>
-
-<h1>This is a heading</h1>
-<p>This is a paragraph.</p>
-
-</body>
+      h1 {
+        color: maroon;
+        margin-left: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+  </body>
 </html>
 ```
+
+### Inline CSS
+
+```
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1 style="color:blue;text-align:center;">This is a heading</h1>
+        <p style="color:red;">This is a paragraph.</p>
+    </body>
+</html
+```
+
+## STYLING TEXT
+
+- **font-size**: Property is used to specify the size of the text/font.
