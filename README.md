@@ -23,6 +23,10 @@
       - [CSS \[attribute^="value"\] Selector](#css-attributevalue-selector-3)
       - [CSS \[attribute$="value"\] Selector](#css-attributevalue-selector-4)
       - [CSS \[attribute\*="value"\] Selector](#css-attributevalue-selector-5)
+  - [DEFINING COLORS IN CSS](#defining-colors-in-css)
+    - [RGB / RGBA NOTATION](#rgb--rgba-notation)
+    - [HEXADECIMAL NOTATION](#hexadecimal-notation)
+  - [CONFLICTING SELECTORS AND DECLARATIONS](#conflicting-selectors-and-declarations)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -454,3 +458,36 @@ a[target="_blank"] {
   background: yellow;
 }
 ```
+
+## DEFINING COLORS IN CSS
+
+### RGB / RGBA NOTATION
+
+```
+rgb(0, 255, 255)
+```
+
+### HEXADECIMAL NOTATION
+
+```
+#00ffff
+```
+
+## CONFLICTING SELECTORS AND DECLARATIONS
+
+Declarations marked !important
+|
+v
+Inline style (style attribute in HTML)
+|
+v
+ID (#) selector -> Multiple -> Last selector in code applies
+|
+v
+Class (.) or pseudo-class (:) selector -> Multiple -> Last selector in code applies
+|
+v
+Element selector (p, div, li, etc.) -> Multiple -> Last selector in code applies
+|
+v
+Universal selector (\*)
