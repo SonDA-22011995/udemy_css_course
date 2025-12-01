@@ -6,6 +6,9 @@
     - [Internal CSS](#internal-css)
     - [Inline CSS](#inline-css)
   - [STYLING TEXT](#styling-text)
+  - [CSS Selectors](#css-selectors)
+    - [CSS Combinators](#css-combinators)
+      - [Simple selectors](#simple-selectors)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -132,7 +135,76 @@ p.normal {
 ```
 
 - **text-transform**: property is used to control the capitalization of text in an element.
+
   - none - No transformation. Text renders as it is
   - capitalize - Transforms the first character of each word to uppercase
   - uppercase - Transforms all characters to uppercase
   - lowercase - Transforms all characters to lowercase
+
+- **font-style**: property specifies the font style for a text.
+  - normal - The text is shown normally
+  - italic - The text is shown in italics
+  - oblique - The text is "leaning" (oblique is very similar to italic)
+- **line-height**: property specifies the height of a line.**Note**: Negative values are not allowed.
+
+```
+div.a {
+  line-height: normal;
+}
+
+div.b {
+  line-height: 1.6;
+}
+
+div.c {
+  line-height: 80%;
+}
+
+div.d {
+  line-height: 200%;
+}
+```
+
+## CSS Selectors
+
+### CSS Combinators
+
+#### Simple selectors
+
+- The CSS id Selector: The id selector uses the id attribute of an HTML element to select a specific element.
+
+```
+#para1 {
+  text-align: center;
+  color: red;
+}
+
+```
+
+- The CSS class Selector: The class selector selects HTML elements with a specific class attribute..
+
+```
+.center {
+  text-align: center;
+  color: red;
+}
+```
+
+- The CSS Universal Selector: The universal selector (\*) selects all HTML elements on the page.
+
+```
+* {
+  text-align: center;
+  color: blue;
+}
+
+```
+
+- The CSS Grouping Selector: Selects all the HTML elements with the same style definitions
+
+```
+h1, h2, h3, p, li {
+  font-family: sans-serif;
+}
+
+```
