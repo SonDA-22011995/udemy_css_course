@@ -691,6 +691,8 @@ box-sizing: border-box;
 
 ![Diagram](./static/image/lecture_0002.png)
 ![Diagram](./static/image/lecture_0003.png)
+![Diagram](./static/image/lecture_0004.png)
+![Diagram](./static/image/lecture_0005.png)
 
 ### THE 3 WAYS OF BUILDING LAYOUTS WITH CSS
 
