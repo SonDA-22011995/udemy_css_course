@@ -49,6 +49,7 @@
     - [Layout](#layout)
     - [THE 3 WAYS OF BUILDING LAYOUTS WITH CSS](#the-3-ways-of-building-layouts-with-css)
       - [FLOAT LAYOUTS](#float-layouts)
+        - [ABSOLUTE POSITIONING VS. FLOATS](#absolute-positioning-vs-floats)
       - [FLEXBOX](#flexbox)
       - [CSS GRID](#css-grid)
 
@@ -679,6 +680,15 @@ el {
 #### FLOAT LAYOUTS
 
 - The old way of building layouts of all sizes, using the float CSS property. Still used, but getting outdated fast.
+
+##### ABSOLUTE POSITIONING VS. FLOATS
+
+| Absolute Positioning                                                                                 | Floats                                                           |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| 👉 Element is removed from the normal flow: “out of flow”                                            | 👉 Element is removed from the normal flow: “out of flow”        |
+| 👉 No impact on surrounding elements, might overlap them                                             | 👉 Text and inline elements will wrap around the floated element |
+| 👉 We use top, bottom, left, or right to offset the element from its relatively positioned container | 👉 The container will not adjust its height to the element       |
+| `position: absolute`                                                                                 | `float: left` / `float: right`                                   |
 
 #### FLEXBOX
 
