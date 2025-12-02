@@ -49,10 +49,6 @@
     - [Layout](#layout)
     - [THE 3 WAYS OF BUILDING LAYOUTS WITH CSS](#the-3-ways-of-building-layouts-with-css)
       - [THE BOX MODEL WITH BOX-SIZING: BORDER-BOX](#the-box-model-with-box-sizing-border-box)
-      - [FLOAT LAYOUTS](#float-layouts)
-        - [ABSOLUTE POSITIONING VS. FLOATS](#absolute-positioning-vs-floats)
-        - [The CSS clear Property](#the-css-clear-property)
-        - [CLEARING FLOAT](#clearing-float)
       - [FLEXBOX](#flexbox)
       - [CSS GRID](#css-grid)
 
@@ -689,7 +685,10 @@ el {
 
 ```
 box-sizing: border-box;
-```
+``
+
+![Diagram](./static/image/lecture_0002.png)
+![Diagram](./static/image/lecture_0003.png)
 
 #### FLOAT LAYOUTS
 
@@ -722,6 +721,7 @@ box-sizing: border-box;
 - Example
 
 ```
+
  <header class="main-header clearfix">
   <h1>📘 The Code Magazine</h1>
 
