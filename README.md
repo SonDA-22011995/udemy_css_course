@@ -47,8 +47,7 @@
 - [Section 2: LAYOUTS: FLOATS, FLEXBOX, AND CSS GRID FUNDAMENTALS](#section-2-layouts-floats-flexbox-and-css-grid-fundamentals)
   - [WHAT DOES “LAYOUT” MEAN?](#what-does-layout-mean)
     - [Layout](#layout)
-    - [THE 3 WAYS OF BUILDING LAYOUTS WITH CSS](#the-3-ways-of-building-layouts-with-css)
-      - [THE BOX MODEL WITH BOX-SIZING: BORDER-BOX](#the-box-model-with-box-sizing-border-box)
+    - [THE BOX MODEL WITH BOX-SIZING: BORDER-BOX](#the-box-model-with-box-sizing-border-box)
       - [FLEXBOX](#flexbox)
       - [CSS GRID](#css-grid)
 
@@ -674,9 +673,7 @@ el {
 - Layout gives the page a visual structure, into which we place our content
 - Building a layout: arranging page elements into a visual structure instead of simply having them placed one after another (normal flow)
 
-### THE 3 WAYS OF BUILDING LAYOUTS WITH CSS
-
-#### THE BOX MODEL WITH BOX-SIZING: BORDER-BOX
+### THE BOX MODEL WITH BOX-SIZING: BORDER-BOX
 
 - The CSS box-sizing property defines how to calculate the width and height of an element: should the calculation include padding and borders, or not.
 - The box-sizing property allows us to include the padding and border in an element's total width and height.
@@ -689,6 +686,8 @@ box-sizing: border-box;
 
 ![Diagram](./static/image/lecture_0002.png)
 ![Diagram](./static/image/lecture_0003.png)
+
+### THE 3 WAYS OF BUILDING LAYOUTS WITH CSS
 
 #### FLOAT LAYOUTS
 
