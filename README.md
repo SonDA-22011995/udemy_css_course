@@ -50,6 +50,7 @@
     - [THE 3 WAYS OF BUILDING LAYOUTS WITH CSS](#the-3-ways-of-building-layouts-with-css)
       - [FLOAT LAYOUTS](#float-layouts)
         - [ABSOLUTE POSITIONING VS. FLOATS](#absolute-positioning-vs-floats)
+        - [CLEARING FLOAT](#clearing-float)
       - [FLEXBOX](#flexbox)
       - [CSS GRID](#css-grid)
 
@@ -689,6 +690,65 @@ el {
 | 👉 No impact on surrounding elements, might overlap them                                             | 👉 Text and inline elements will wrap around the floated element |
 | 👉 We use top, bottom, left, or right to offset the element from its relatively positioned container | 👉 The container will not adjust its height to the element       |
 | `position: absolute`                                                                                 | `float: left` / `float: right`                                   |
+
+##### CLEARING FLOAT
+
+- If a floated element is taller than the containing element, it will "overflow" outside of its container. We can then add a clearfix hack to solve this problem.
+- The clearfix hack involves the ::after pseudo-element, and is used to ensure that the parent container properly encloses its floated child elements.
+- Example
+
+```
+ <header class="main-header clearfix">
+  <h1>📘 The Code Magazine</h1>
+
+  <nav>
+    <!-- <strong>This is the navigation</strong> -->
+    <a href="blog.html">Blog</a>
+    <a href="#">Challenges</a>
+    <a href="#">Flexbox</a>
+    <a href="#">CSS Grid</a>
+  </nav>
+</header>
+```
+
+```
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px 40px;
+  margin-bottom: 60px;
+}
+
+.author-img {
+  float: left;
+  margin-bottom: 20px;
+}
+
+.author {
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+}
+
+.clearfix::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+```
+
+- Example explain
+  - .clearfix::after - Targets a pseudo-element that is generated after the content of any element with class="clearfix"
+  - content: "" - Ensures the pseudo-element is rendered, even if it has no visible content
+  - clear: both - This clears both left and right floats, effectively pushing any following content below the floated elements, and forces the parent container to expand to include them
+  - display: table | block - This creates a new block formatting context, which helps in containing floats
 
 #### FLEXBOX
 
