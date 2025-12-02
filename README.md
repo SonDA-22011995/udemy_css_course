@@ -48,6 +48,7 @@
   - [WHAT DOES “LAYOUT” MEAN?](#what-does-layout-mean)
     - [Layout](#layout)
     - [THE 3 WAYS OF BUILDING LAYOUTS WITH CSS](#the-3-ways-of-building-layouts-with-css)
+      - [THE BOX MODEL WITH BOX-SIZING: BORDER-BOX](#the-box-model-with-box-sizing-border-box)
       - [FLOAT LAYOUTS](#float-layouts)
         - [ABSOLUTE POSITIONING VS. FLOATS](#absolute-positioning-vs-floats)
         - [The CSS clear Property](#the-css-clear-property)
@@ -678,6 +679,17 @@ el {
 - Building a layout: arranging page elements into a visual structure instead of simply having them placed one after another (normal flow)
 
 ### THE 3 WAYS OF BUILDING LAYOUTS WITH CSS
+
+#### THE BOX MODEL WITH BOX-SIZING: BORDER-BOX
+
+- The CSS box-sizing property defines how to calculate the width and height of an element: should the calculation include padding and borders, or not.
+- The box-sizing property allows us to include the padding and border in an element's total width and height.
+- If you set box-sizing: border-box; on an element, the padding and border are included in the calculation of the width and height
+- With box-sizing: border-box, padding and border will not increase the element’s width or height as long as the content does not overflow the specified dimensions. However, if the content exceeds the available space, the element may expand unless an overflow rule is applied.
+
+```
+box-sizing: border-box;
+```
 
 #### FLOAT LAYOUTS
 
