@@ -50,6 +50,7 @@
     - [THE 3 WAYS OF BUILDING LAYOUTS WITH CSS](#the-3-ways-of-building-layouts-with-css)
       - [FLOAT LAYOUTS](#float-layouts)
         - [ABSOLUTE POSITIONING VS. FLOATS](#absolute-positioning-vs-floats)
+        - [The CSS clear Property](#the-css-clear-property)
         - [CLEARING FLOAT](#clearing-float)
       - [FLEXBOX](#flexbox)
       - [CSS GRID](#css-grid)
@@ -690,6 +691,17 @@ el {
 | 👉 No impact on surrounding elements, might overlap them                                             | 👉 Text and inline elements will wrap around the floated element |
 | 👉 We use top, bottom, left, or right to offset the element from its relatively positioned container | 👉 The container will not adjust its height to the element       |
 | `position: absolute`                                                                                 | `float: left` / `float: right`                                   |
+
+##### The CSS clear Property
+
+- The clear property specifies what should happen with the element that is NEXT to a floating element.
+- The clear property prevents elements from wrapping around or beside the floated content.
+- This property can have one of the following values:
+  - none - Default. Allows elements to float on either side
+  - left - The element is pushed below floated elements on its left side
+  - right - The element is pushed below floated elements, on its right side
+  - both - The element is pushed below floated elements, on both its left and right side
+  - inherit - The element inherits the clear value from its parent
 
 ##### CLEARING FLOAT
 
