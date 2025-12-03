@@ -979,7 +979,7 @@ nav {
 
 - order: Controls order of items. -1 makes item first, 1 makes it last
 
-  - 0 | integer
+  - 0 (default) | integer
 
 #### CSS GRID
 
