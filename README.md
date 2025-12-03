@@ -59,6 +59,8 @@
         - [FLEXBOX TERMINOLOGY](#flexbox-terminology)
         - [FLEX CONTAINER](#flex-container)
         - [Flex Container Properties](#flex-container-properties)
+        - [FLEX ITEMS](#flex-items)
+        - [FLEX ITEMS PROPERTIES](#flex-items-properties)
       - [CSS GRID](#css-grid)
 
 # Section 1: CSS FUNDAMENTALS
@@ -936,6 +938,41 @@ nav {
   - space-evenly
 
 - flex-flow - Shorthand property for flex-direction and flex-wrap
+
+##### FLEX ITEMS
+
+- When an HTML element has its display property set to flex or inline-flex, it becomes a flex container, and its immediate children automatically become flex items.
+
+##### FLEX ITEMS PROPERTIES
+
+- align-self - To overwrite align-items for individual flex items
+
+  - auto
+  - stretch
+  - flex-start
+  - flex-end
+  - center
+  - baseline
+
+- flex-grow: To allow an element to grow (0 means no, 1+ means yes)
+
+  - 0 (default) | integer
+
+- flex-shrink: To allow an element to shrink (0 means no, 1+ means yes). The flex-shrink property only takes effect when the flex container becomes too small to fit all the items
+
+  - 0 (default) | integer
+
+- flex-basis: To define an item’s width, instead of the width property
+
+  - auto | length
+
+- flex: **Recommended** shorthand for flex-grow, -shrink, -basis.
+
+  - 0 1 auto | integer integer length
+
+- order: Controls order of items. -1 makes item first, 1 makes it last
+
+  - 0 | integer
 
 #### CSS GRID
 
