@@ -54,6 +54,9 @@
         - [The CSS clear Property](#the-css-clear-property)
         - [CLEARING FLOAT](#clearing-float)
       - [FLEXBOX](#flexbox)
+        - [WHAT IS FLEXBOX?](#what-is-flexbox)
+        - [DECLARE FLEXBOX](#declare-flexbox)
+        - [FLEXBOX TERMINOLOGY](#flexbox-terminology)
       - [CSS GRID](#css-grid)
 
 # Section 1: CSS FUNDAMENTALS
@@ -694,6 +697,16 @@ box-sizing: border-box;
 ![Diagram](./static/image/lecture_0004.png)
 ![Diagram](./static/image/lecture_0005.png)
 
+- Global Application — The Standard Approach Used by CSS Developers
+
+```
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+```
+
 ### THE 3 WAYS OF BUILDING LAYOUTS WITH CSS
 
 #### FLOAT LAYOUTS
@@ -783,6 +796,91 @@ nav {
 #### FLEXBOX
 
 - Modern way of laying out elements in a 1-dimensional row without using floats. Perfect for component layouts
+
+##### WHAT IS FLEXBOX?
+
+- Flexbox is a set of related CSS properties for building 1-dimensional layouts
+- The main idea behind flexbox is that empty space inside a container element
+  can be automatically divided by its child elements
+- Flexbox makes it easy to automatically align items to one another inside a
+  parent container, both horizontally and vertically
+- Flexbox solves common problems such as vertical centering and creating
+  equal-height columns
+- Flexbox is perfect for replacing floats, allowing us to write fewer and cleaner
+  HTML and CSS code
+
+##### DECLARE FLEXBOX
+
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+    <style>
+      .el--1 {
+        background-color: blueviolet;
+      }
+      .el--2 {
+        background-color: orangered;
+      }
+      .el--3 {
+        background-color: green;
+        height: 150px;
+      }
+      .el--4 {
+        background-color: goldenrod;
+      }
+      .el--5 {
+        background-color: palevioletred;
+      }
+      .el--6 {
+        background-color: steelblue;
+      }
+      .el--7 {
+        background-color: yellow;
+      }
+      .el--8 {
+        background-color: crimson;
+      }
+
+      .container {
+        /* STARTER */
+        font-family: sans-serif;
+        background-color: #ddd;
+        font-size: 40px;
+        margin: 40px;
+
+        /* FLEXBOX */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="el el--1">HTML</div>
+      <div class="el el--2">and</div>
+      <div class="el el--3">CSS</div>
+      <div class="el el--4">are</div>
+      <div class="el el--5">amazing</div>
+      <div class="el el--6">languages</div>
+      <div class="el el--7">to</div>
+      <div class="el el--8">learn</div>
+    </div>
+  </body>
+</html>
+```
+
+##### FLEXBOX TERMINOLOGY
+
+- MAIN AXIS
+- CROSS AXIS
+
+![Diagram](./static/image/lecture_0006.png)
 
 #### CSS GRID
 
