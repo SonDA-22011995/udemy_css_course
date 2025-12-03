@@ -57,6 +57,8 @@
         - [WHAT IS FLEXBOX?](#what-is-flexbox)
         - [DECLARE FLEXBOX](#declare-flexbox)
         - [FLEXBOX TERMINOLOGY](#flexbox-terminology)
+        - [FLEX CONTAINER](#flex-container)
+        - [Flex Container Properties](#flex-container-properties)
       - [CSS GRID](#css-grid)
 
 # Section 1: CSS FUNDAMENTALS
@@ -881,6 +883,59 @@ nav {
 - CROSS AXIS
 
 ![Diagram](./static/image/lecture_0006.png)
+
+##### FLEX CONTAINER
+
+- In CSS, a flex container is an HTML element that has its display property set to either `flex` or `inline-flex`
+
+##### Flex Container Properties
+
+- display - Must be set to flex or inline-flex
+
+- gap: To create space between items, without using margin
+
+- justify-content: To align items along main axis (horizontally, by default)
+
+  - center
+  - flex-start (default)
+  - flex-end
+  - space-around
+  - space-between
+  - space-evenly
+
+- align-items: To align items along cross axis (vertically, by default)
+
+  - flex-start
+  - flex-end
+  - center
+  - stretch
+  - baseline
+  - normal (default)
+
+- flex-direction: To define which is the main axis
+
+  - row (default)
+  - column
+  - row-reverse
+  - column-reverse
+
+- flex-wrap: To allow items to wrap into a new line if they are too large
+
+  - nowrap (default)
+  - wrap
+  - wrap-reverse
+
+- align-content: Only applies when there are multiple lines (flex-wrap: wrap)
+
+  - center
+  - stretch (default)
+  - flex-start
+  - flex-end
+  - space-around
+  - space-between
+  - space-evenly
+
+- flex-flow - Shorthand property for flex-direction and flex-wrap
 
 #### CSS GRID
 
