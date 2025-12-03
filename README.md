@@ -896,6 +896,13 @@ nav {
 
 - gap: To create space between items, without using margin
 
+  - The gap property defines the size of the gap between the rows and between the columns in flexbox, grid or multi-column layout. It is a shorthand for the following properties:
+
+    - row-gap
+    - column-gap
+
+  - 0 0 | length lenght | row-gap column-gap
+
 - justify-content: To align items along main axis (horizontally, by default)
 
   - center
