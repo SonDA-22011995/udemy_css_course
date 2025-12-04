@@ -56,6 +56,7 @@
       - [FLEXBOX](#flexbox)
         - [WHAT IS FLEXBOX?](#what-is-flexbox)
         - [DECLARE FLEXBOX](#declare-flexbox)
+        - [Flex vs Inline-Flex — Quick Notes](#flex-vs-inline-flex--quick-notes)
         - [FLEXBOX TERMINOLOGY](#flexbox-terminology)
         - [FLEX CONTAINER](#flex-container)
         - [Flex Container Properties](#flex-container-properties)
@@ -879,6 +880,16 @@ nav {
 </html>
 ```
 
+##### Flex vs Inline-Flex — Quick Notes
+
+| Property                | `display: flex`                   | `display: inline-flex`                 |
+| ----------------------- | --------------------------------- | -------------------------------------- |
+| Element type            | Block-level element               | Inline-level element                   |
+| Width behavior          | Expands to full available width   | Shrinks to fit content                 |
+| Can sit next to others  | ❌ No (forces a new line)         | ✔ Yes (can appear on the same line)    |
+| Flexbox behavior inside | ✔ Same flexbox behavior           | ✔ Same flexbox behavior                |
+| Use cases               | Layout sections, headers, navbars | Badges, tags, buttons, small UI blocks |
+
 ##### FLEXBOX TERMINOLOGY
 
 - MAIN AXIS
@@ -971,7 +982,7 @@ nav {
 
 - flex-basis: To define an item’s width, instead of the width property
 
-  - auto | length
+  - auto (default) | length
 
 - flex: **Recommended** shorthand for flex-grow, -shrink, -basis.
 
