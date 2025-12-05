@@ -1081,8 +1081,8 @@ nav {
 
   - `<repeat-count>`: This argument specifies how many times the `<track-list>` should be repeated. It can be:
     - An integer (e.g., 3) to repeat the pattern a fixed number of times.
-    - The keyword auto-fill: This creates as many columns/rows as possible without overflowing the container, potentially leaving empty tracks.
-    - The keyword auto-fit: This is similar to auto-fill, but if there's extra space, it expands the tracks to fill the available space entirely.
+    - The keyword `auto-fill`: This creates as many columns/rows as possible without overflowing the container, potentially leaving empty tracks.
+    - The keyword `auto-fit`: This is similar to `auto-fill`, but if there's extra space, it expands the tracks to fill the available space entirely.
   - `<track-list>`: This argument defines the size(s) of the columns or rows to be repeated. It can be:
     - A single track size (e.g., 1fr, 100px, auto).
     - A list of track sizes (e.g., 1fr 2fr, 100px auto 50px) to create a repeating pattern of different-sized track
