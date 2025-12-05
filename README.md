@@ -1048,7 +1048,47 @@ nav {
 
 ##### GRID CONTAINER
 
+- A grid container contains one or more grid items arranged in columns and rows.
+
+- All direct child elements of a grid container automatically become grid items.
+
+- An element becomes a grid container when its display property is set to grid or inline-grid.
+
 ##### GRID CONTAINER PROPERTIES
+
+- grid-template-columns | grid-template-rows: To establish the grid row and column tracks. One length unit for each track. Any unit can be used, new fr fills unused space
+
+  - Property Values:
+
+| Value         | Description                                                                                             |
+| ------------- | ------------------------------------------------------------------------------------------------------- |
+| none          | Default value. Columns are created if needed                                                            |
+| auto          | The size of the columns is determined by the container size and the size of the content in the column   |
+| max-content   | Sets the size of each column based on the largest item in the column                                    |
+| min-content   | Sets the size of each column based on the smallest item in the column                                   |
+| minmax()      | Defines a size range greater than or equal to a minimum value and less than or equal to a maximum value |
+| length        | Sets the size of the columns using a legal length unit (e.g., px, rem). Read about length units         |
+| percentage    | Sets the size of columns in percent, relative to the inline size of the container                       |
+| fit-content() | Sets the column size in length or %, using available space but never exceeding the max-content size     |
+| repeat()      | Repeats a set of columns in the grid                                                                    |
+| subgrid       | Indicates that the grid will adopt the spanned portion of its parent grid on that axis                  |
+| initial       | Resets this property to its default value                                                               |
+| inherit       | Inherits this property from the parent element                                                          |
+
+- align-content Vertically aligns the grid items inside the container
+- align-items Specifies the default alignment for items inside a flexbox or grid container
+- display Specifies the display behavior (the type of rendering box) of an element
+- column-gap Specifies the gap between the columns
+- gap A shorthand property for the row-gap and the column-gap properties
+- grid A shorthand property for the grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and the grid-auto-flow properties
+- grid-auto-columns Specifies a default column size
+- grid-auto-flow Specifies how auto-placed items are inserted in the grid
+- grid-auto-rows Specifies a default row size
+- grid-template A shorthand property for the grid-template-rows, grid-template-columns and grid-areas properties
+- grid-template-areas Specifies how to display columns and rows, using named grid items
+- justify-content Horizontally aligns the grid items inside the container
+- place-content A shorthand property for the align-content and the justify-content properties
+- row-gap Specifies the gap between the grid rows
 
 ##### GRID ITEMS
 
