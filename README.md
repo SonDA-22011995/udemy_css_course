@@ -67,6 +67,11 @@
         - [DECLARE GRID](#declare-grid)
         - [`grid` vs `inline-grid`— Quick Notes](#grid-vs-inline-grid-quick-notes)
         - [BASIC CSS GRID TERMINOLOGY](#basic-css-grid-terminology)
+        - [MORE CSS GRID TERMINOLOGY](#more-css-grid-terminology)
+        - [GRID CONTAINER](#grid-container)
+        - [GRID CONTAINER PROPERTIES](#grid-container-properties)
+        - [GRID ITEMS](#grid-items)
+        - [GRID ITEMS PROPERTIES](#grid-items-properties)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -1036,3 +1041,15 @@ nav {
 - ROW AXIS
 
 ![Diagram](./static/image/lecture_0007.png)
+
+##### MORE CSS GRID TERMINOLOGY
+
+![Diagram](./static/image/lecture_0008.png)
+
+##### GRID CONTAINER
+
+##### GRID CONTAINER PROPERTIES
+
+##### GRID ITEMS
+
+##### GRID ITEMS PROPERTIES
