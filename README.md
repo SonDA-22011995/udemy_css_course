@@ -64,8 +64,9 @@
         - [FLEX ITEMS PROPERTIES](#flex-items-properties)
       - [CSS GRID](#css-grid)
         - [WHAT IS CSS GRID?](#what-is-css-grid)
-        - [DECLARE FLEXBOX](#declare-flexbox-1)
+        - [DECLARE GRID](#declare-grid)
         - [`grid` vs `inline-grid`— Quick Notes](#grid-vs-inline-grid-quick-notes)
+        - [BASIC CSS GRID TERMINOLOGY](#basic-css-grid-terminology)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -1009,7 +1010,7 @@ nav {
 - CSS Grid is not meant to replace flexbox! Instead, they work perfectly
   together. Need a 1D layout? Use flexbox. Need a 2D layout? Use CSS Grid.
 
-##### DECLARE FLEXBOX
+##### DECLARE GRID
 
 ```
 
@@ -1028,3 +1029,10 @@ nav {
 | **Parent behavior**        | Treated as a block box by its parent                              | Treated as an inline box by its parent                                 |
 | **Affect on siblings**     | Pushes siblings to next line (like a div)                         | Allows siblings to appear on the same line                             |
 | **Rendering differences**  | Common for large layout structures                                | Useful for small UI pieces that need Grid but stay inline              |
+
+##### BASIC CSS GRID TERMINOLOGY
+
+- COLUMN AXIS
+- ROW AXIS
+
+![Diagram](./static/image/lecture_0007.png)
