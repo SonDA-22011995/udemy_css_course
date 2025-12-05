@@ -1058,7 +1058,19 @@ nav {
 
 - grid-template-columns | grid-template-rows: To establish the grid row and column tracks. One length unit for each track. Any unit can be used, new fr fills unused space
 
-  - Property Values:
+- Declare:
+
+```
+grid-template-columns: auto auto;
+grid-template-columns: auto auto auto;
+grid-template-columns: 50px 100px;
+grid-template-columns: 10% 10% 10%;
+grid-template-columns: max-content max-content;
+grid-template-columns: fit-content(80px) auto fit-content(100px);
+grid-template-columns: repeat(2, 60px 1fr);
+```
+
+- Property Values:
 
 | Value         | Description                                                                                             |
 | ------------- | ------------------------------------------------------------------------------------------------------- |
