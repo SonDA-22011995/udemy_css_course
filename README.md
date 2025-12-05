@@ -71,6 +71,8 @@
         - [NEW IN GRID](#new-in-grid)
           - [Fractional unit](#fractional-unit)
           - [repeat() Function](#repeat-function)
+          - [minmax() Function](#minmax-function)
+          - [fit-content() Function](#fit-content-function)
         - [GRID CONTAINER](#grid-container)
         - [GRID CONTAINER PROPERTIES](#grid-container-properties)
         - [GRID ITEMS](#grid-items)
@@ -1021,8 +1023,57 @@ nav {
 ##### DECLARE GRID
 
 ```
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu content"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  gap: 3px;
+  background-color: dodgerblue;
+  padding: 5px;
+}
+.container div {
+  background-color: white;
+  padding: 10px;
+}
+.container div.header {
+  grid-area: header;
+  text-align: center;
+}
+.container div.menu {
+  grid-area: menu;
+}
+.container div.content {
+  grid-area: content;
+}
+.container div.footer {
+  grid-area: footer;
+  text-align: center;
+}
+</style>
+</head>
+<body>
 
+<h1>CSS Grid Layout</h1>
 
+<p>The Grid Layout Module offers a grid-based layout system, with rows and columns.</p>
+<p>The Grid Layout Module makes it easy to design complex and responsive web pages without using floats and positioning:</p>
+
+<div class="container">
+  <div class="header"><h2>My Header</h2></div>
+  <div class="menu"><a href="#">Link 1</a><br><a href="#">Link 2</a><br><a href="#">Link 3</a></div>
+  <div class="content"><h3>Lorem Ipsum</h3><p>Lorem ipsum odor amet, consectetuer adipiscing elit. Ridiculus sit nisl laoreet facilisis aliquet. Potenti dignissim litora eget montes rhoncus sapien neque urna. Cursus libero sapien integer magnis ligula lobortis quam ut.</p></div>
+  <div class="footer"><h4>Footer</h4></div>
+</div>
+
+</body>
+</html>
 ```
 
 ##### `grid` vs `inline-grid`— Quick Notes
@@ -1108,6 +1159,28 @@ nav {
     }
   ```
 
+###### minmax() Function
+
+- The CSS minmax() function is used with CSS grids, and defines a size range greater than or equal to a min value and less than or equal to a max value.
+- Syntax: `minmax(min, max)`
+  - min: This defines the minimum size the grid track can shrink to.
+  - max: This defines the maximum size the grid track can grow to.
+
+```
+.grid-container {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(150px, 300px);
+  /* Defines two columns:
+     - The first column will be at least 200px and take up 1 fraction of the remaining space.
+     - The second column will be at least 150px and at most 300px. */
+}
+```
+
+###### fit-content() Function
+
+- The CSS `fit-content()` function allows you to size an element based on its content. This works like the box/element will use the available space, but it will never expand the maximum content size.
+- Syntax: `fit-content( <length-percentage> )` where `<length-percentage>` can be an absolute length (e.g., 100px, 5rem) or a percentage relative to the available space (e.g., 100%, 50%).
+
 ##### GRID CONTAINER
 
 - A grid container contains one or more grid items arranged in columns and rows.
@@ -1153,19 +1226,125 @@ grid-template-columns: repeat(2, 60px 1fr);
 
 - row-gap | column-gap | gap (row gap, column gap): To create empty space between tracks
 
-- align-content Vertically aligns the grid items inside the container
-- align-items Specifies the default alignment for items inside a flexbox or grid container
-- display Specifies the display behavior (the type of rendering box) of an element
-- column-gap Specifies the gap between the columns
-- grid A shorthand property for the grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and the grid-auto-flow properties
-- grid-auto-columns Specifies a default column size
-- grid-auto-flow Specifies how auto-placed items are inserted in the grid
-- grid-auto-rows Specifies a default row size
-- grid-template A shorthand property for the grid-template-rows, grid-template-columns and grid-areas properties
-- grid-template-areas Specifies how to display columns and rows, using named grid items
-- justify-content Horizontally aligns the grid items inside the container
-- place-content A shorthand property for the align-content and the justify-content properties
-- row-gap Specifies the gap between the grid rows
+  - `length`
+
+```
+#grid-container {
+  display: grid;
+  row-gap: 50px;
+  column-gap: 20px;
+  /* short-hand => gap: 50px 20px;*/
+}
+```
+
+- justify-items | align-items: To align items inside rows / columns (horizontally / vertically)
+
+  - align-items Property Values:
+    - normal: Default. Behaves like 'stretch' for flexbox and grid items, or 'start' for grid items with a defined block size.
+    - stretch: Items are stretched to fit the container
+    - center: Items are positioned at the center of the container
+    - flex-start: Items are positioned at the beginning of the container
+    - flex-end: Items are positioned at the end of the container
+    - start: Items are positioned at the beginning of their individual grid cells, in the block direction
+    - end: Items are positioned at the end of the their individual grid cells, in the block direction
+    - baseline: Items are positioned at the baseline of the container
+    - initial: Sets this property to its default value. Read about initial
+    - inherit: Inherits this property from its parent element. Read about inherit
+  - justify-items Property Values:
+    - legacy: Default value. Grid items with justify-self value 'auto' only inherits grid container justify-items property value if it starts with 'legacy'. It exists to implement the legacy alignment behavior of HTML's 〈center〉 element and align attribute.
+    - normal: Dependant on layout context, but similar to 'stretch' for grid layout
+    - stretch: Stretches to fill the grid cell if inline-size (width) is not set.
+    - start: Align items at the start in the inline direction
+    - left: Align items to the left
+    - center: Align items to the center
+    - end: Align items at the end in the inline direction
+    - right: Align items to the right
+    - overflow-alignment: 'safe' sets alignment of the item to 'start' if the content overflows, 'unsafe' keeps the alignment value regardless of wether or not the item content overflows
+    - baseline alignment: The element is aligned with the baseline of the parent.
+    - initial: Sets this property to its default value. Read about initial
+    - inherit: Inherits this property from its parent element. Read about inherit
+
+- align-content | justify-content: To align entire grid inside grid container. Only applies if
+  container is larger than the grid
+
+  - align-content Property Values:
+    - stretch: Default value. Lines stretch to take up the remaining space
+    - center: Lines are packed toward the center of the flex container
+    - flex-start: Lines are packed toward the start of the flex container
+    - flex-end: Lines are packed toward the end of the flex container
+    - space-between: Lines are evenly distributed in the flex container
+    - space-around: Lines are evenly distributed in the flex container, with half-size spaces on either end
+    - space-evenly: Lines are evenly distributed in the flex container, with equal space around them
+    - initial: Sets this property to its default value. Read about initial
+    - inherit: Inherits this property from its parent element. Read about inherit
+  - justify-content Property Values:
+    - flex-start: Default value. Items are positioned at the beginning of the container
+    - flex-end: Items are positioned at the end of the container
+    - center: Items are positioned in the center of the container
+    - space-between: Items will have space between them
+    - space-around: Items will have space before, between, and after them
+    - space-evenly: Items will have equal space around them
+    - initial: Sets this property to its default value. Read about initial
+    - inherit: Inherits this property from its parent element. Read about inherit
+
+- grid-auto-columns: Specifies a default column size
+- grid-auto-rows: Specifies a default row size
+- grid-template-areas: Specifies how to display columns and rows, using named grid items
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.item1 {
+  grid-area: myArea;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: 'myArea myArea . . .';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<h1>The grid-template-areas Property</h1>
+
+<p>You can use the <em>grid-template-areas</em> property to set up a grid layout.</p>
+<p>Item1, is called "myArea" and will take up the place of two columns (out of five):</p>
+
+<div class="grid-container">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+  <div class="item6">6</div>
+  <div class="item7">7</div>
+  <div class="item8">8</div>
+  <div class="item9">9</div>
+</div>
+
+</body>
+</html>
+```
+
+- grid-auto-flow: Specifies how auto-placed items are inserted in the grid.
+  - Properties: `column | row`
+  - Example: `grid-auto-flow: column;`
+- place-content: A shorthand property for the align-content and the justify-content properties
+- grid-template: A shorthand property for the grid-template-rows, grid-template-columns and grid-areas properties
+- grid: A shorthand property for the grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and the grid-auto-flow properties
 
 ##### GRID ITEMS
 
