@@ -1348,8 +1348,60 @@ grid-template-columns: repeat(2, 60px 1fr);
 
 ##### GRID ITEMS
 
+- A grid container contains one or more grid items. All direct child elements of a grid container automatically become grid items.
+
 ##### GRID ITEMS PROPERTIES
 
-```
+- grid-column-start: Specifies where to start the grid item
 
 ```
+.item1 {
+  grid-column-start: 2;
+}
+```
+
+- grid-column-end: Specifies where to end the grid item
+
+```
+.item1 {
+  grid-column-end: span 3;
+}
+```
+
+- grid-column: A shorthand property for the grid-column-start and the grid-column-end properties
+  - `start-line end-line`
+
+```
+.item1 {
+  grid-column: 1 / span 2;
+}
+```
+
+- grid-row-start Specifies where to start the grid item
+- grid-row-end Specifies where to end the grid item
+- grid-row A shorthand property for the grid-row-start and the grid-row-end properties
+- justify-self | align-self: To overwrite justify-items / align-items for single items
+  - justify-self properties
+    - auto: Default value. Grid container justify-self property value is inherited.
+    - normal: Dependant on layout context, but similar to 'stretch' for grid layout for grid items when size is not set. If size is set, the property value behaves lik 'start'.
+    - stretch: Stretches to fill the grid cell if inline-size (width) is not set.
+    - start: Align items at the start in the inline direction
+    - left: Align items to the left
+    - center: Align items to the center
+    - end: Align items at the end in the inline direction
+    - right: Align items to the right
+    - overflow-alignment: 'safe' sets alignment of the item to 'start' if the content overflows, 'unsafe' keeps the alignment value regardless of wether or not the item content overflows
+    - baseline alignment: The element is aligned with the baseline of the parent.
+    - initial: Sets this property to its default value. Read about initial
+    - inherit: Inherits this property from its parent element. Read about inherit
+  - align-self properties
+    - auto: Default. The element inherits its parent container's align-items property, or "stretch" if it has no parent container
+    - stretch: The element is positioned to fit the container
+    - center: The element is positioned at the center of the container
+    - flex-start: The element is positioned at the beginning of the container
+    - flex-end: The element is positioned at the end of the container
+    - baseline: The element is positioned at the baseline of the container
+    - initial: Sets this property to its default value. Read about initial
+    - inherit: Inherits this property from its parent element. Read about inherit
+- place-self A shorthand property for the align-self and the justify-self properties
+- grid-area: A shorthand property for the grid-row-start, grid-column-start, grid-row-end and the grid-column-end properties
