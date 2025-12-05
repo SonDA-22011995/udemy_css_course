@@ -68,6 +68,8 @@
         - [`grid` vs `inline-grid`— Quick Notes](#grid-vs-inline-grid-quick-notes)
         - [BASIC CSS GRID TERMINOLOGY](#basic-css-grid-terminology)
         - [MORE CSS GRID TERMINOLOGY](#more-css-grid-terminology)
+        - [NEW IN GRID](#new-in-grid)
+          - [Fractional unit](#fractional-unit)
         - [GRID CONTAINER](#grid-container)
         - [GRID CONTAINER PROPERTIES](#grid-container-properties)
         - [GRID ITEMS](#grid-items)
@@ -1046,6 +1048,30 @@ nav {
 
 ![Diagram](./static/image/lecture_0008.png)
 
+##### NEW IN GRID
+
+###### Fractional unit
+
+- The fr unit represents a fraction of the available space in the grid container. The next grid definition would create three equal width tracks that grow and shrink according to the available space
+
+```
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+```
+
+```
+.container {
+  /* ... */
+
+  grid-template-columns: 1fr 1fr 40px 20%;
+  grid-template-rows: 100px 200px 100px;
+
+  /* ... */
+}
+```
+
 ##### GRID CONTAINER
 
 - A grid container contains one or more grid items arranged in columns and rows.
@@ -1087,11 +1113,12 @@ grid-template-columns: repeat(2, 60px 1fr);
 | initial       | Resets this property to its default value                                                               |
 | inherit       | Inherits this property from the parent element                                                          |
 
+- row-gap | column-gap | gap (row gap, column gap): To create empty space between tracks
+
 - align-content Vertically aligns the grid items inside the container
 - align-items Specifies the default alignment for items inside a flexbox or grid container
 - display Specifies the display behavior (the type of rendering box) of an element
 - column-gap Specifies the gap between the columns
-- gap A shorthand property for the row-gap and the column-gap properties
 - grid A shorthand property for the grid-template-rows, grid-template-columns, grid-template-areas, grid-auto-rows, grid-auto-columns, and the grid-auto-flow properties
 - grid-auto-columns Specifies a default column size
 - grid-auto-flow Specifies how auto-placed items are inserted in the grid
