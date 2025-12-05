@@ -63,6 +63,9 @@
         - [FLEX ITEMS](#flex-items)
         - [FLEX ITEMS PROPERTIES](#flex-items-properties)
       - [CSS GRID](#css-grid)
+        - [WHAT IS CSS GRID?](#what-is-css-grid)
+        - [DECLARE FLEXBOX](#declare-flexbox-1)
+        - [`grid` vs `inline-grid`— Quick Notes](#grid-vs-inline-grid-quick-notes)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -995,3 +998,33 @@ nav {
 #### CSS GRID
 
 - For laying out element in a fully-fledged 2-dimensional grid. Perfect for page layouts and complex components.
+
+##### WHAT IS CSS GRID?
+
+- CSS Grid is a set of CSS properties for building 2-dimensional layouts
+- The main idea behind CSS Grid is that we divide a container element into
+  rows and columns that can be filled with its child elements
+- In two-dimensional contexts, CSS Grid allows us to write less nested HTML
+  and easier-to-read CSS
+- CSS Grid is not meant to replace flexbox! Instead, they work perfectly
+  together. Need a 1D layout? Use flexbox. Need a 2D layout? Use CSS Grid.
+
+##### DECLARE FLEXBOX
+
+```
+
+
+```
+
+##### `grid` vs `inline-grid`— Quick Notes
+
+| Feature                    | `display: grid`                                                   | `display: inline-grid`                                                 |
+| -------------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| **Element type**           | Behaves as a **block-level** grid container                       | Behaves as an **inline-level** grid container                          |
+| **Layout capability**      | Supports full CSS Grid layout                                     | Supports full CSS Grid layout (same grid features as `display: grid`)  |
+| **How it occupies space**  | Takes the full available width (block element)                    | Occupies only the space of its content (inline element)                |
+| **Line breaking behavior** | Starts on a new line                                              | Can sit next to other inline or inline-block elements                  |
+| **Use cases**              | Page layouts, sections, containers that require full-width blocks | Small grid components inside text flow, badges, labels, inline widgets |
+| **Parent behavior**        | Treated as a block box by its parent                              | Treated as an inline box by its parent                                 |
+| **Affect on siblings**     | Pushes siblings to next line (like a div)                         | Allows siblings to appear on the same line                             |
+| **Rendering differences**  | Common for large layout structures                                | Useful for small UI pieces that need Grid but stay inline              |
