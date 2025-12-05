@@ -70,6 +70,7 @@
         - [MORE CSS GRID TERMINOLOGY](#more-css-grid-terminology)
         - [NEW IN GRID](#new-in-grid)
           - [Fractional unit](#fractional-unit)
+          - [repeat() Function](#repeat-function)
         - [GRID CONTAINER](#grid-container)
         - [GRID CONTAINER PROPERTIES](#grid-container-properties)
         - [GRID ITEMS](#grid-items)
@@ -1072,6 +1073,41 @@ nav {
 }
 ```
 
+###### repeat() Function
+
+- The repeat() function in CSS is a powerful tool primarily used within CSS Grid Layout, specifically with the grid-template-columns and grid-template-rows properties. It provides a concise way to define a repeating pattern of track sizes (columns or rows), reducing code redundancy and improving readability.
+
+- Syntax: `repeat(<repeat-count>, <track-list>)`
+
+  - `<repeat-count>`: This argument specifies how many times the `<track-list>` should be repeated. It can be:
+    - An integer (e.g., 3) to repeat the pattern a fixed number of times.
+    - The keyword auto-fill: This creates as many columns/rows as possible without overflowing the container, potentially leaving empty tracks.
+    - The keyword auto-fit: This is similar to auto-fill, but if there's extra space, it expands the tracks to fill the available space entirely.
+  - `<track-list>`: This argument defines the size(s) of the columns or rows to be repeated. It can be:
+    - A single track size (e.g., 1fr, 100px, auto).
+    - A list of track sizes (e.g., 1fr 2fr, 100px auto 50px) to create a repeating pattern of different-sized track
+
+  ```
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* Creates 4 equal-width columns */
+    }
+  ```
+
+  ```
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr 2fr); /* Repeats a pattern of 1fr then 2fr, three times */
+    }
+  ```
+
+  ```
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Creates columns that are at least 200px wide, and expand to fill space */
+    }
+  ```
+
 ##### GRID CONTAINER
 
 - A grid container contains one or more grid items arranged in columns and rows.
@@ -1087,6 +1123,7 @@ nav {
 - Declare:
 
 ```
+
 grid-template-columns: auto auto;
 grid-template-columns: auto auto auto;
 grid-template-columns: 50px 100px;
@@ -1094,6 +1131,7 @@ grid-template-columns: 10% 10% 10%;
 grid-template-columns: max-content max-content;
 grid-template-columns: fit-content(80px) auto fit-content(100px);
 grid-template-columns: repeat(2, 60px 1fr);
+
 ```
 
 - Property Values:
@@ -1132,3 +1170,7 @@ grid-template-columns: repeat(2, 60px 1fr);
 ##### GRID ITEMS
 
 ##### GRID ITEMS PROPERTIES
+
+```
+
+```
