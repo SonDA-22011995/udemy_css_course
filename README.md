@@ -69,6 +69,7 @@
         - [BASIC CSS GRID TERMINOLOGY](#basic-css-grid-terminology)
         - [MORE CSS GRID TERMINOLOGY](#more-css-grid-terminology)
         - [NEW IN GRID](#new-in-grid)
+          - [auto](#auto)
           - [Fractional unit](#fractional-unit)
           - [repeat() Function](#repeat-function)
           - [minmax() Function](#minmax-function)
@@ -1102,6 +1103,11 @@ nav {
 
 ##### NEW IN GRID
 
+###### auto
+
+- The `auto` keyword in CSS instructs the browser to automatically calculate a value for a property based on various factors, including content, parent elements, or other constraints. It is a versatile keyword used in several CSS properties
+- Syntax `width: auto;`
+
 ###### Fractional unit
 
 - The fr unit represents a fraction of the available space in the grid container. The next grid definition would create three equal width tracks that grow and shrink according to the available space
@@ -1190,6 +1196,8 @@ nav {
 - An element becomes a grid container when its display property is set to grid or inline-grid.
 
 ##### GRID CONTAINER PROPERTIES
+
+![Diagram](./static/image/lecture_0009.png)
 
 - grid-template-columns | grid-template-rows: To establish the grid row and column tracks. One length unit for each track. Any unit can be used, new fr fills unused space
 
