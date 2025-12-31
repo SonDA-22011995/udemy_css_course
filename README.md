@@ -78,6 +78,12 @@
         - [GRID CONTAINER PROPERTIES](#grid-container-properties)
         - [GRID ITEMS](#grid-items)
         - [GRID ITEMS PROPERTIES](#grid-items-properties)
+- [Section 3: Components and Layout patterns](#section-3-components-and-layout-patterns)
+  - [Building an Accordion Component](#building-an-accordion-component)
+    - [Hero icons](#hero-icons)
+    - [Open color](#open-color)
+    - [`line-height: 1`](#line-height-1)
+    - [`stroke` property](#stroke-property)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -1413,3 +1419,41 @@ grid-template-columns: repeat(2, 60px 1fr);
     - inherit: Inherits this property from its parent element. Read about inherit
 - place-self A shorthand property for the align-self and the justify-self properties
 - grid-area: A shorthand property for the grid-row-start, grid-column-start, grid-row-end and the grid-column-end properties
+
+# Section 3: Components and Layout patterns
+
+![Diagram](./static/image/lecture_0010.png)
+
+## Building an Accordion Component
+
+### Hero icons
+
+- https://heroicons.com/
+
+### Open color
+
+- https://yeun.github.io/open-color/
+
+### `line-height: 1`
+
+- `line-height: 1` means the height of each line equals the font size, with no unit attached.
+- Example: Each line will be 16px tall.
+
+```
+p {
+  font-size: 16px;
+  line-height: 1;
+}
+```
+
+### `stroke` property
+
+- The `stroke` property in CSS is primarily used for defining the appearance of lines and borders on SVG (Scalable Vector Graphics) elements. For styling strokes on HTML text, the vendor-prefixed -webkit-text-stroke property is the common solution.
+- In SVG, you can use the stroke properties to control the outline of shapes like `<rect>`, `<circle>`, `<path>`, etc..
+- Here are the main SVG stroke properties:
+- `stroke`: Sets the color of the outline. It accepts color names, hex values, RGB values, etc..
+- `stroke-width`: Defines the thickness of the line. It accepts various units like px, em, or percentages.
+- `stroke-opacity`: Sets the transparency of the stroke (a value between 0 and 1).
+- `stroke-linecap`: Determines the shape of the end of an open path (options: butt, round, square).
+- `stroke-linejoin`: Defines the shape of corners where two lines meet (options: miter, round, bevel).
+- `stroke-dasharray`: Specifies a pattern of dashes and gaps to create dashed lines.
