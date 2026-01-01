@@ -1427,6 +1427,8 @@ grid-template-columns: repeat(2, 60px 1fr);
 
 ## Building an Accordion Component
 
+- [an Accordion Component](01-accordion.html)
+
 ### Hero icons
 
 - https://heroicons.com/
