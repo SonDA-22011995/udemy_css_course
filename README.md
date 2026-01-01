@@ -85,6 +85,7 @@
     - [`line-height`](#line-height)
     - [`stroke` property](#stroke-property)
     - [`box-shadow`](#box-shadow)
+  - [Building an Carousel Component](#building-an-carousel-component)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -1427,7 +1428,9 @@ grid-template-columns: repeat(2, 60px 1fr);
 
 ## Building an Accordion Component
 
-- [an Accordion Component](01-accordion.html)
+![Diagram](./static/image/lecture_0011.png)
+
+-Example source code: [An Accordion Component](01-accordion.html)
 
 ### Hero icons
 
@@ -1484,3 +1487,5 @@ box-shadow: 10px 5px 15px 0 rgba(0, 0, 0, 0.3);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 ```
+
+## Building an Carousel Component
