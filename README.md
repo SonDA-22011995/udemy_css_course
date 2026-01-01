@@ -82,8 +82,9 @@
   - [Building an Accordion Component](#building-an-accordion-component)
     - [Hero icons](#hero-icons)
     - [Open color](#open-color)
-    - [`line-height: 1`](#line-height-1)
+    - [`line-height`](#line-height)
     - [`stroke` property](#stroke-property)
+    - [`box-shadow`](#box-shadow)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -1434,7 +1435,7 @@ grid-template-columns: repeat(2, 60px 1fr);
 
 - https://yeun.github.io/open-color/
 
-### `line-height: 1`
+### `line-height`
 
 - `line-height: 1` means the height of each line equals the font size, with no unit attached.
 - Example: Each line will be 16px tall.
@@ -1457,3 +1458,29 @@ p {
 - `stroke-linecap`: Determines the shape of the end of an open path (options: butt, round, square).
 - `stroke-linejoin`: Defines the shape of corners where two lines meet (options: miter, round, bevel).
 - `stroke-dasharray`: Specifies a pattern of dashes and gaps to create dashed lines.
+
+### `box-shadow`
+
+- `box-shadow` is a CSS property that adds a shadow effect around an element’s box (outside or inside its border).
+
+- Basic syntax: `box-shadow: offset-x offset-y blur-radius spread-radius color;`
+- Meaning of each value
+  - `offset-x (10px)`: Moves the shadow left (−) or right (+)
+  - `offset-y (5px)`: Moves the shadow up (−) or down (+)
+  - `blur-radius (15px)`: How blurry the shadow is. 0 = sharp edge, bigger = softer shadow
+  - `spread-radius (0)`: (optional) Expands (+) or shrinks (−) the shadow size
+  - `color`: Shadow color (often rgba for transparency)
+
+```
+box-shadow: 10px 5px 15px 0 rgba(0, 0, 0, 0.3);
+```
+
+- Simple example
+
+```
+.card {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+```
+
+- Inner shadow
