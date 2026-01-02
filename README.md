@@ -85,7 +85,22 @@
     - [`line-height`](#line-height)
     - [`stroke` property](#stroke-property)
     - [`box-shadow`](#box-shadow)
-  - [Building an Carousel Component](#building-an-carousel-component)
+  - [Building a Carousel Component](#building-a-carousel-component)
+  - [`boder-radius`](#boder-radius)
+    - [What `border-radius` does](#what-border-radius-does)
+    - [RGBA Value](#rgba-value)
+    - [CSS 2D Transforms](#css-2d-transforms)
+      - [`translate()`](#translate)
+      - [`rotate()`](#rotate)
+      - [`scale()`](#scale)
+      - [`scaleX()`](#scalex)
+      - [`scaleY()`](#scaley)
+      - [`skewX()`](#skewx)
+    - [`skew()`](#skew)
+    - [`skewY()`](#skewy)
+    - [`matrix()`](#matrix)
+    - [How to Create a Circle Button in CSS](#how-to-create-a-circle-button-in-css)
+    - [`&nbsp;` stands for non-breaking space.](#nbsp-stands-for-non-breaking-space)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -1488,4 +1503,230 @@ box-shadow: 10px 5px 15px 0 rgba(0, 0, 0, 0.3);
 }
 ```
 
-## Building an Carousel Component
+## Building a Carousel Component
+
+![Diagram](./static/image/lecture_0012.png)
+
+-Example source code: [A Carousel Component](02-carousel.html)
+
+## `boder-radius`
+
+### What `border-radius` does
+
+- By default, HTML elements have sharp (square) corners. `border-radius` makes those corners curved or rounded.
+
+```
+.box {
+  border-radius: 10px;
+}
+```
+
+- Common examples
+
+  - Slightly rounded corners
+
+  ```
+  border-radius: 4px;
+  ```
+
+  - Fully rounded (circle)
+
+  ```
+  border-radius: 50%;
+  ```
+
+  - Different radius for each corner
+
+  ```
+  border-radius: 10px 20px 30px 40px;
+  ```
+
+  - Elliptical corners
+
+  ```
+  border-radius: 20px / 10px;
+  ```
+
+  - Different elliptical corners per side
+
+  ```
+  .box {
+    border-radius: 60px 20px / 30px 10px;
+  }
+  ```
+
+### RGBA Value
+
+- RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity for a color.
+- An RGBA color value is specified with: `rgba(red, green, blue, alpha)`
+- The **alpha parameter** is a number between 0.0 (fully transparent) and 1.0 (not transparent at all)
+
+```
+rgba(0, 0, 0, 0.25);
+```
+
+### CSS 2D Transforms
+
+#### `translate()`
+
+- The `translate()` function moves an element from its current position (according to the parameters given for the X-axis and the Y-axis).
+
+```
+div {
+  transform: translate(50px, 100px);
+}
+```
+
+#### `rotate()`
+
+- The `rotate()` function rotates an element clockwise or counter-clockwise according to a given degree.
+
+```
+div {
+  transform: rotate(20deg);
+}
+```
+
+#### `scale()`
+
+- The `scale()` function increases or decreases the size of an element (according to the parameters given for the width and height).
+
+```
+div {
+  transform: scale(2, 3);
+}
+```
+
+```
+div {
+  transform: scale(2);
+}
+```
+
+#### `scaleX()`
+
+- The `scaleX()` function increases or decreases the width of an element.
+
+```
+div {
+  transform: scaleX(2);
+}
+```
+
+#### `scaleY()`
+
+- The `scaleY()` function increases or decreases the height of an element.
+
+```
+div {
+  transform: scaleY(0.5);
+}
+```
+
+#### `skewX()`
+
+- The `skewX()` function skews an element along the X-axis by the given angle.
+
+```
+div {
+  transform: skewX(20deg);
+}
+```
+
+### `skew()`
+
+- The `skew()` function skews an element along the X and Y-axis by the given angles.
+
+```
+div {
+  transform: skew(20deg, 10deg);
+}
+```
+
+### `skewY()`
+
+- The `skewY()` function skews an element along the Y-axis by the given angle.
+
+```
+div {
+  transform: skewY(20deg);
+}
+```
+
+### `matrix()`
+
+- The `matrix()` function combines all the 2D transform functions into one.
+- Syntax: `matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())`
+
+### How to Create a Circle Button in CSS
+
+- Basic Rule:
+  - To create a square button, you must ensure `width === height` and `border-radius: 50%;`
+  - Padding should be avoided or carefully controlled, because padding can break the square shape.
+- Centering Content Inside the Square Button
+
+```
+.square-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+```
+
+- Outline (Hollow) Circle Button
+
+```
+.circle-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+```
+
+- Final Complete Example
+
+```
+.circle-button {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  border-radius: 50%;
+  border: 1px solid #333;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+```
+
+### `&nbsp;` stands for non-breaking space.
+
+- What it means
+  - It inserts a space character that will not break into a new line
+  - The browser treats it as a visible space, not just formatting
+- Why it’s used
+  - Prevent line breaks
+  ```
+  <p>10&nbsp;kg</p>
+  ```
+  - Add extra spaces (HTML collapses normal spaces)
+  ```
+  <p>Hello&nbsp;&nbsp;&nbsp;World</p>
+  ```
+  - Keep words together
+  ```
+  <p>Mr.&nbsp;Smith</p>
+  ```
