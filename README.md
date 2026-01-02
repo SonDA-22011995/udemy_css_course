@@ -79,6 +79,7 @@
         - [GRID ITEMS](#grid-items)
         - [GRID ITEMS PROPERTIES](#grid-items-properties)
 - [Section 3: Components and Layout patterns](#section-3-components-and-layout-patterns)
+  - [GENERAL STYLES](#general-styles)
   - [Building an Accordion Component](#building-an-accordion-component)
     - [Hero icons](#hero-icons)
     - [Open color](#open-color)
@@ -101,6 +102,10 @@
     - [`matrix()`](#matrix)
     - [How to Create a Circle Button in CSS](#how-to-create-a-circle-button-in-css)
     - [`&nbsp;` stands for non-breaking space.](#nbsp-stands-for-non-breaking-space)
+  - [Building a Table Component](#building-a-table-component)
+    - [Use `<table>` element](#use-table-element)
+    - [`border-collapse`](#border-collapse)
+    - [CSS `:nth-child()` Pseudo-class](#css-nth-child-pseudo-class)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -1439,6 +1444,30 @@ grid-template-columns: repeat(2, 60px 1fr);
 
 # Section 3: Components and Layout patterns
 
+## GENERAL STYLES
+
+```
+<head>
+ <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  <style>
+  * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        color: #343a40;
+        line-height: 1;
+      }
+  </style>
+</head>
+```
+
 ![Diagram](./static/image/lecture_0010.png)
 
 ## Building an Accordion Component
@@ -1730,3 +1759,84 @@ div {
   ```
   <p>Mr.&nbsp;Smith</p>
   ```
+
+## Building a Table Component
+
+-Example source code: [A Table Component](03-table.html)
+
+### Use `<table>` element
+
+- Define an HTML Table
+
+```
+   <table>
+      <thead>
+        <tr>
+          <th>Chair</th>
+          <th>The Laid Back</th>
+          <th>The Woker Bee</th>
+          <th>The Chair 4/2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Width</td>
+          <td>80 cm</td>
+          <td>60 cm</td>
+          <td>220 cm</td>
+        </tr>
+        <tr>
+          <td>Height</td>
+          <td>100 cm</td>
+          <td>110 cm</td>
+          <td>90 cm</td>
+        </tr>
+        <tr>
+          <td>Depth</td>
+          <td>70 cm</td>
+          <td>65 cm</td>
+          <td>80 cm</td>
+        </tr>
+        <tr>
+          <td>Weight</td>
+          <td>16 kg</td>
+          <td>22 kg</td>
+          <td>80 kg</td>
+        </tr>
+      </tbody>
+    </table>
+```
+
+- The `<thead>` tag is used to group header content in an HTML table.
+- The `<tbody>` tag is used to group the body content in an HTML table.
+- The `<tfoot>` tag is used to group footer content in an HTML table.
+- Table Headers: Sometimes you want your cells to be table header cells. In those cases use the `<th>` tag instead of the `<td>` tag:
+- Table Rows: Each table row starts with a `<tr>` and ends with a `</tr>` tag.
+- Table Cells: Each table cell is defined by a `<td>` and a `</td>` tag.
+- The `<colgroup>` tag specifies a group of one or more columns in a table for formatting.
+  - The `<colgroup>` tag is useful for applying styles to entire columns, instead of repeating the styles for each cell, for each row.
+  - Attributes: `span=<number>` - Specifies the number of columns a column group should span
+- The `<col>` tag specifies column properties for each column within a `<colgroup>` element.
+
+### `border-collapse`
+
+- `border-collapse` is a CSS property used with HTML tables. It controls whether table borders are separated or merged into a single border
+- `border-collapse: separate; (default)`
+  - Each cell keeps its own border
+  - There is space between borders
+  - You can control the space using border-spacing
+- `border-collapse: collapse;`
+  - Borders of adjacent cells are merged into one
+  - No gap between cells
+  - The cleanest and most common style
+
+### CSS `:nth-child()` Pseudo-class
+
+- The CSS `:nth-child(n)` pseudo-class matches any element that is the nth child of its parent.
+- Syntax
+
+```
+:nth-child(index | odd | even | an+b) {
+  css declarations;
+}
+```
