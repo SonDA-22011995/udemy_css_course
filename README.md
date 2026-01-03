@@ -1,4 +1,5 @@
 - [Section 1: CSS FUNDAMENTALS](#section-1-css-fundamentals)
+  - [Semantic HTML Tags – When to Use Them](#semantic-html-tags--when-to-use-them)
   - [WHAT IS CSS?](#what-is-css)
   - [A CSS SYNTAX](#a-css-syntax)
   - [HOW TO ADD CSS](#how-to-add-css)
@@ -109,6 +110,28 @@
   - [Building a Pagination Component](#building-a-pagination-component)
 
 # Section 1: CSS FUNDAMENTALS
+
+## Semantic HTML Tags – When to Use Them
+
+| Tag            | When to use                             | Semantic meaning                              |
+| -------------- | --------------------------------------- | --------------------------------------------- |
+| `<header>`     | The top part of a page **or** a section | Introductory content: logo, title, navigation |
+| `<nav>`        | Contains **main navigation links**      | Page or site navigation                       |
+| `<main>`       | The **primary content** of the page     | Core content (must be **unique**, only once)  |
+| `<section>`    | Groups content with a **clear topic**   | Thematic grouping of content                  |
+| `<article>`    | **Independent, reusable** content       | Blog post, news article, comment              |
+| `<aside>`      | **Secondary or related** content        | Sidebar, ads, related links                   |
+| `<footer>`     | Bottom of a page or section             | Copyright, extra links, author info           |
+| `<figure>`     | Wraps illustrative content              | Image, diagram, code example                  |
+| `<figcaption>` | Caption for `<figure>`                  | Description of the figure                     |
+| `<address>`    | Contact or author information           | Email, author name                            |
+| `<time>`       | Represents date or time                 | Publish date, deadline                        |
+| `<mark>`       | Highlights important text               | Emphasized keyword                            |
+| `<details>`    | Expandable / collapsible content        | FAQ, accordion                                |
+| `<summary>`    | Heading for `<details>`                 | Clickable title                               |
+| `<ul>`         | List with **no specific order**         | Menus, feature lists                          |
+| `<ol>`         | List with a **specific order**          | Steps, rankings                               |
+| `<dl>`         | **Term–description** list               | Glossary, metadata                            |
 
 ## WHAT IS CSS?
 
