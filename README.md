@@ -1844,4 +1844,6 @@ div {
 
 ## Building a Pagination Component
 
+![Diagram](./static/image/lecture_0013.png)
+
 -Example source code: [A Pagination Component](04-pagination.html)
