@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagination Component</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ------------------------ */
+      /* GENERAL STYLES */
+      /* ------------------------ */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        color: #343a40;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /*CENTER BY POSITION*/
+        /* position: relative; */
+      }
+
+      .page {
+        font-weight: 500;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .page--active {
+        color: #fff;
+        background-color: #087f5b;
+      }
+
+      .pagination {
+        height: 60px;
+        position: relative;
+        margin-top: 200px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+      }
+
+      .btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid #087f5b;
+        /* position: absolute; */
+        top: 50%;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      /* .btn--left {
+        left: 0%;
+        transform: translate(-150%, -50%);
+      }
+
+      .btn--right {
+        right: 0%;
+        transform: translate(150%, -50%);
+      } */
+
+      .chevron {
+        stroke: #087f5b;
+        height: 20px;
+        width: 20px;
+        display: block;
+        position: absolute;
+      }
+
+      .btn--active {
+        background-color: #087f5b;
+      }
+
+      .btn--active .chevron {
+        stroke: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pagination">
+      <button class="btn btn--left">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="chevron chevron--left"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5"
+          />
+        </svg>
+        &nbsp;
+      </button>
+      <div class="page">1</div>
+      <div class="page">2</div>
+      <div class="page">3</div>
+      <div class="page page--active">4</div>
+      <div class="page">5</div>
+      <div class="page">6</div>
+      <div class="page">...</div>
+      <div class="page">23</div>
+
+      <button class="btn btn--right btn--active">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="chevron chevron--right"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"
+          />
+        </svg>
+        &nbsp;
+      </button>
+    </div>
+  </body>
+</html>

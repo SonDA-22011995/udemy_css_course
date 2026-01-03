@@ -106,6 +106,7 @@
     - [Use `<table>` element](#use-table-element)
     - [`border-collapse`](#border-collapse)
     - [CSS `:nth-child()` Pseudo-class](#css-nth-child-pseudo-class)
+  - [Building a Pagination Component](#building-a-pagination-component)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -1840,3 +1841,7 @@ div {
   css declarations;
 }
 ```
+
+## Building a Pagination Component
+
+-Example source code: [A Pagination Component](04-pagination.html)
