@@ -266,12 +266,12 @@ p.b {
 
 - **font-family**: property specifies the font for an element.
 
+  - `<family-name>`: property specifies the font for an element.
+  - `<generic-name>`: property can hold several font names as a "fallback" system. If the browser does not support the first font, it tries the next font
+
 ```
 font-family: <family-name>, <generic-name>;
 ```
-
-`<family-name>`: property specifies the font for an element.
-`<generic-name>`: property can hold several font names as a "fallback" system. If the browser does not support the first font, it tries the next font
 
 - **text-transform**: property is used to control the capitalization of text in an element.
 
