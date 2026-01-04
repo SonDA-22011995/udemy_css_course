@@ -84,6 +84,7 @@
   - [Building an Accordion Component](#building-an-accordion-component)
     - [Hero icons](#hero-icons)
     - [Open color](#open-color)
+    - [Google font](#google-font)
     - [`line-height`](#line-height)
     - [`stroke` property](#stroke-property)
     - [`box-shadow`](#box-shadow)
@@ -264,6 +265,13 @@ p.b {
 ```
 
 - **font-family**: property specifies the font for an element.
+
+```
+font-family: <family-name>, <generic-name>;
+```
+
+`<family-name>`: property specifies the font for an element.
+`<generic-name>`: property can hold several font names as a "fallback" system. If the browser does not support the first font, it tries the next font
 
 - **text-transform**: property is used to control the capitalization of text in an element.
 
@@ -1507,6 +1515,10 @@ grid-template-columns: repeat(2, 60px 1fr);
 ### Open color
 
 - https://yeun.github.io/open-color/
+
+### Google font
+
+- `https://fonts.google.com/`
 
 ### `line-height`
 
