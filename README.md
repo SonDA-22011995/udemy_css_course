@@ -109,6 +109,12 @@
     - [`border-collapse`](#border-collapse)
     - [CSS `:nth-child()` Pseudo-class](#css-nth-child-pseudo-class)
   - [Building a Pagination Component](#building-a-pagination-component)
+  - [Building a Section Component](#building-a-section-component)
+    - [`<a>` tag css like button](#a-tag-css-like-button)
+    - [Center a block element horizontally (left \& right)](#center-a-block-element-horizontally-left--right)
+    - [CSS Units - Relative Lengths](#css-units---relative-lengths)
+    - [`background` CSS](#background-css)
+    - [Backgroud image](#backgroud-image)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -1882,3 +1888,153 @@ div {
 ![Diagram](./static/image/lecture_0013.png)
 
 -Example source code: [A Pagination Component](04-pagination.html)
+
+## Building a Section Component
+
+-Example source code: [A Section Component](05-hero-section.html)
+
+### `<a>` tag css like button
+
+```
+.btn:link,
+.btn:visited {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #e76e22;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 9px;
+  }
+```
+
+### Center a block element horizontally (left & right)
+
+- Step 1: Create a CSS class
+
+```
+.container {
+  margin: 0px auto;
+}
+```
+
+- Step 2: Add this class to the block element you want to center on the page
+
+```
+<div class="container">
+  Content
+</div>
+
+```
+
+### CSS Units - Relative Lengths
+
+| Unit | Description                                                                               |
+| ---- | ----------------------------------------------------------------------------------------- |
+| em   | Relative to the font-size of the element (2em means 2 times the size of the current font) |
+| ex   | Relative to the x-height of the current font (rarely used)                                |
+| ch   | Relative to the width of the "0" (zero)                                                   |
+| rem  | Relative to the font-size of the root element                                             |
+| vw   | Relative to 1% of the width of the viewport                                               |
+| vh   | Relative to 1% of the height of the viewport                                              |
+| vmin | Relative to 1% of the viewport's smaller dimension                                        |
+| vmax | Relative to 1% of the viewport's larger dimension                                         |
+| %    | Relative to the parent element                                                            |
+
+### `background` CSS
+
+- Syntax
+
+```
+background: <color> <image> <position> / <size> <repeat> <attachment> <origin> <clip>;
+```
+
+- Detailed Explanation of CSS background Properties
+
+| Property                | Description                                               | Common Values                                 | Default Value | Example                          |
+| ----------------------- | --------------------------------------------------------- | --------------------------------------------- | ------------- | -------------------------------- |
+| `background-color`      | Sets the background color of an element                   | `red`, `#fff`, `rgb()`, `transparent`         | `transparent` | `background-color: #f5f5f5;`     |
+| `background-image`      | Sets one or more background images                        | `url()`, `linear-gradient()`                  | `none`        | `background-image: url(bg.png);` |
+| `background-position`   | Sets the initial position of the background image         | `center`, `top left`, `50% 50%`               | `0% 0%`       | `background-position: center;`   |
+| `background-size`       | Defines the size of the background image                  | `auto`, `cover`, `contain`, `100px 200px`     | `auto`        | `background-size: cover;`        |
+| `background-repeat`     | Controls if/how the background image repeats              | `repeat`, `no-repeat`, `repeat-x`, `repeat-y` | `repeat`      | `background-repeat: no-repeat;`  |
+| `background-attachment` | Determines whether the background scrolls with the page   | `scroll`, `fixed`, `local`                    | `scroll`      | `background-attachment: fixed;`  |
+| `background-origin`     | Defines where the background positioning area starts      | `padding-box`, `border-box`, `content-box`    | `padding-box` | `background-origin: border-box;` |
+| `background-clip`       | Defines how far the background extends within the element | `border-box`, `padding-box`, `content-box`    | `border-box`  | `background-clip: content-box;`  |
+
+### Backgroud image
+
+- How to Create a Background Image
+  - Explanation:
+    - no-repeat → prevents the image from repeating
+    - cover → makes the image cover the entire area
+    - center → centers the image
+
+```
+body {
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+```
+
+- Full-Screen Background Image
+  - `fixed` keeps the background image in place while scrolling
+
+```
+body {
+  min-height: 100vh;
+  background: url("bg.jpg") center / cover no-repeat fixed;
+}
+```
+
+- Background Image for a Section
+
+```
+.hero {
+  height: 400px;
+  background-image: url("hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+```
+
+- Background Image with Overlay (Very Common)
+
+```
+.hero {
+  height: 100vh;
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+    ),
+    url("bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+```
+
+- Gradient Background (No Image Needed)
+
+```
+body {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+```
+
+- Responsive Background Images
+
+```
+.container {
+  background-image: url("bg-large.jpg");
+}
+
+@media (max-width: 768px) {
+  .container {
+    background-image: url("bg-small.jpg");
+  }
+}
+```
