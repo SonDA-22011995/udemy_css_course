@@ -88,6 +88,7 @@
     - [`line-height`](#line-height)
     - [`stroke` property](#stroke-property)
     - [`box-shadow`](#box-shadow)
+    - [`text-decoration`](#text-decoration)
   - [Building a Carousel Component](#building-a-carousel-component)
   - [`boder-radius`](#boder-radius)
     - [What `border-radius` does](#what-border-radius-does)
@@ -117,6 +118,10 @@
     - [Backgroud image](#backgroud-image)
   - [Building A Web Application](#building-a-web-application)
     - [`overflow`](#overflow)
+    - [`max-width`](#max-width)
+    - [`rem`](#rem)
+    - [`letter-spacing`](#letter-spacing)
+    - [Tints and shades generator tool](#tints-and-shades-generator-tool)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -1576,6 +1581,39 @@ box-shadow: 10px 5px 15px 0 rgba(0, 0, 0, 0.3);
 }
 ```
 
+### `text-decoration`
+
+- The `text-decoration` property specifies the decoration added to text, and is a shorthand property for:
+  - text-decoration-line (required)
+  - text-decoration-color
+  - text-decoration-style
+  - text-decoration-thickness
+
+```
+# ? is option
+text-decoration:
+  <text-decoration-line>
+  <text-decoration-style>?
+  <text-decoration-color>?
+  <text-decoration-thickness>?;
+```
+
+| Property                    | Possible Values                         | Description                              |
+| --------------------------- | --------------------------------------- | ---------------------------------------- |
+| text-decoration-line        | none, underline, overline, line-through | Defines which decoration line(s) to use  |
+| text-decoration-style       | solid, double, dotted, dashed, wavy     | Defines the style of the decoration line |
+| text-decoration-color       | color value (e.g. red, #333, rgb())     | Sets the color of the decoration         |
+| text-decoration-thickness   | auto, length (px, em, rem)              | Controls the thickness of the decoration |
+| text-decoration (shorthand) | line style color thickness              | Combines all text-decoration properties  |
+
+- Example
+
+```
+a {
+  text-decoration: underline wavy red 2px;
+}
+```
+
 ## Building a Carousel Component
 
 ![Diagram](./static/image/lecture_0012.png)
@@ -2062,3 +2100,68 @@ body {
   | scroll | Content is clipped and scrollbars are always shown. | Always visible | Hidden |
   | auto | Content is clipped only when necessary. Scrollbars appear if needed. | Shown only when content overflows | Hidden |
   | clip | Content is clipped like `hidden`, but scrolling is not allowed at all. | No scrollbars | Hidden |
+
+### `max-width`
+
+- `max-width` is a crucial CSS property that sets the maximum width an element can grow, preventing it from exceeding a specified limit
+- Syntax
+
+```
+max-width: <length> | <percentage> | none | initial | inherit;
+```
+
+- Why `max-width` is important. Using a fixed width (e.g. width: 1000px) causes problems on smaller screens:
+  - The element keeps its width no matter how small the viewport is
+  - Horizontal scrolling appears
+  - The layout is not responsive
+- Behavior of max-width:
+  - If the container is wider than max-width → the element width equals max-width
+  - If the container is narrower than max-width → the element becomes 100% of the container width
+- Why percentages alone don’t work:
+  - We want the element to stay exactly 1000px wide on large screens
+  - Only when the screen becomes smaller should the element shrink
+  - `max-width` achieves this behavior, percentages cannot
+
+### `rem`
+
+- What `rem` means
+  - `rem` stands for root element font size
+  - The root element is the `<html>` element
+  - If no font-size is defined on `<html>`, then: `1rem = 16px` (default browser font size)
+- Why rem is powerful
+  - All values defined in rem scale automatically when the root font size changes:
+- The problem with setting `html { font-size: 10px }`
+  - It ignores the user’s browser font-size preference
+  - Users who increase font size for accessibility will not see any effect
+  - This creates usability and accessibility problems
+- Best practice: `62.5%` trick. Instead of setting a fixed pixel value, use:
+
+```
+html {
+  font-size: 62.5%;
+}
+```
+
+- Why `62.5%?`. Default browser `font size: 16px`
+
+```
+10 ÷ 16 = 0.625 = 62.5%
+Result: 1rem ≈ 10px
+```
+
+- Benefit
+  - Keeps calculations easy
+  - Respects the user’s browser font-size setting
+  - Scales the entire layout dynamically
+
+### `letter-spacing`
+
+The `letter-spacing` property increases or decreases the space between characters in a text.
+
+```
+letter-spacing: normal | <length>;
+```
+
+### Tints and shades generator tool
+
+- https://maketintsandshades.com/
