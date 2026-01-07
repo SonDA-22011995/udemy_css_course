@@ -115,6 +115,8 @@
     - [CSS Units - Relative Lengths](#css-units---relative-lengths)
     - [`background` CSS](#background-css)
     - [Backgroud image](#backgroud-image)
+  - [Building A Web Application](#building-a-web-application)
+    - [`overflow`](#overflow)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -2038,3 +2040,25 @@ body {
   }
 }
 ```
+
+## Building A Web Application
+
+### `overflow`
+
+- The `overflow` property in CSS controls what happens when content is bigger than its container.
+- In other words, it decides whether content is clipped, hidden, or scrollable when it does not fit inside an element’s box.
+- When does overflow actually work? Overflow only works when the element has a constrained size, such as:
+  - height
+  - max-height
+  - width
+  - or being limited by a Grid/Flex track
+- If the element does not have a size limit, it will simply grow to fit its content, and overflow will do nothing.
+- Syntax: ` overflow: <value>;`
+- `overflow` values
+  | Value | Description | Scrollbar Behavior | Content Outside Box |
+  | ------- | ---------------------------------------------------------------------- | --------------------------------- | ------------------- |
+  | visible | Content is not clipped and may overflow outside the element (default). | No scrollbars | Visible |
+  | hidden | Content is clipped and overflow is not visible. | No scrollbars | Hidden |
+  | scroll | Content is clipped and scrollbars are always shown. | Always visible | Hidden |
+  | auto | Content is clipped only when necessary. Scrollbars appear if needed. | Shown only when content overflows | Hidden |
+  | clip | Content is clipped like `hidden`, but scrolling is not allowed at all. | No scrollbars | Hidden |
