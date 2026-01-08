@@ -125,6 +125,7 @@
     - [Trick add border inside](#trick-add-border-inside)
     - [`transition`](#transition)
     - [`cubic-bezier`](#cubic-bezier)
+    - [CSS Conic Gradients](#css-conic-gradients)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -2228,4 +2229,82 @@ transition-duration: 0.5s;
 
 ```
 transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+```
+
+### CSS Conic Gradients
+
+- A conic gradient is a type of CSS gradient where colors rotate around a center point, like slices of a pie or a color wheel.
+- Conic gradients change color by angle (degrees) around the center.
+- Syntax
+  `background-image: conic-gradient([from angle] [at position,] color [degree], color [degree], ...)`
+- Conic Gradient: Three Colors
+
+```
+#grad {
+  background-image: conic-gradient(red, yellow, green);
+}
+```
+
+- Conic Gradient: Five Colors
+
+```
+#grad {
+  background-image: conic-gradient(red, yellow, green, blue, black);
+}
+```
+
+- Conic Gradient: Three Colors and Degrees
+
+```
+#grad {
+  background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);
+}
+```
+
+- Create Pie Charts
+
+```
+#grad {
+  background-image: conic-gradient(red, yellow, green, blue, black);
+  border-radius: 50%;
+}
+```
+
+```
+#grad {
+  background-image: conic-gradient(red 0deg, red 90deg, yellow 90deg, yellow 180deg, green 180deg, green 270deg, blue 270deg);
+  border-radius: 50%;
+}
+```
+
+- Conic Gradient With Specified From Angle
+
+```
+#grad {
+  background-image: conic-gradient(from 90deg, red, yellow, green);
+}
+```
+
+- Conic Gradient With Specified Center Position
+
+```
+#grad {
+  background-image: conic-gradient(at 60% 45%, red, yellow, green);
+}
+```
+
+- CSS repeating-conic-gradient() Function
+
+```
+#grad {
+  background-image: repeating-conic-gradient(red 10%, yellow 20%);
+  border-radius: 50%;
+}
+```
+
+```
+#grad {
+  background-image: repeating-conic-gradient(red 0deg 10deg, yellow 10deg 20deg, blue 20deg 30deg);
+  border-radius: 50%;
+}
 ```
