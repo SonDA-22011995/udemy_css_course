@@ -122,6 +122,9 @@
     - [`rem`](#rem)
     - [`letter-spacing`](#letter-spacing)
     - [Tints and shades generator tool](#tints-and-shades-generator-tool)
+    - [Trick add border inside](#trick-add-border-inside)
+    - [`transition`](#transition)
+    - [`cubic-bezier`](#cubic-bezier)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -1561,13 +1564,14 @@ p {
 
 - `box-shadow` is a CSS property that adds a shadow effect around an element’s box (outside or inside its border).
 
-- Basic syntax: `box-shadow: offset-x offset-y blur-radius spread-radius color;`
+- Basic syntax: `box-shadow: | inset | offset-x offset-y blur-radius spread-radius color;`
 - Meaning of each value
   - `offset-x (10px)`: Moves the shadow left (−) or right (+)
   - `offset-y (5px)`: Moves the shadow up (−) or down (+)
   - `blur-radius (15px)`: How blurry the shadow is. 0 = sharp edge, bigger = softer shadow
   - `spread-radius (0)`: (optional) Expands (+) or shrinks (−) the shadow size
   - `color`: Shadow color (often rgba for transparency)
+  - `inset`: Changes the shadow to be inside the element.
 
 ```
 box-shadow: 10px 5px 15px 0 rgba(0, 0, 0, 0.3);
@@ -2165,3 +2169,63 @@ letter-spacing: normal | <length>;
 ### Tints and shades generator tool
 
 - https://maketintsandshades.com/
+
+### Trick add border inside
+
+```
+box-shadow: inset 0 0 0 3px #fff;
+```
+
+### `transition`
+
+- In CSS, transition is used to make changes to CSS properties happen smoothly over time, instead of changing instantly.
+- Without transition, when a CSS property changes (for example on `:hover`), the change is immediate.
+- With transition, the browser animates the change from the old value to the new value.
+
+```
+transition: property duration timing-function delay;
+```
+
+- Example
+
+```
+button {
+  background-color: blue;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: red;
+}
+```
+
+- `duration`: How long the animation takes. Unit `s` or `ms`
+
+```
+transition-duration: 0.5s;
+```
+
+- `timing-function`: How the animation progresses over time
+
+  - linear → constant speed
+  - ease → slow → fast → slow (default)
+  - ease-in → slow start
+  - ease-out → slow end
+  - ease-in-out → slow start & end
+  - cubic-bezier(...) → custom curve
+
+- `delay`: How long to wait before the animation starts. Unit `s` or `ms`
+
+### `cubic-bezier`
+
+- `cubic-bezier()` is a timing function used in CSS transition and animation to control how fast or slow an animation progresses over time.
+- Syntax: `cubic-bezier(x1, y1, x2, y2);`
+  - (x1, y1) → first control point
+  - (x2, y2) → second control point
+  - x1 and x2 must be between 0 and 1
+  - y1 and y2 can be any number (even negative or > 1)
+- Example
+
+```
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+```
