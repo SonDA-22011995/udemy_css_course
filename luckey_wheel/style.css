@@ -1,0 +1,55 @@
+.wheel {
+  position: relative;
+  margin: 100px auto;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-image: conic-gradient(
+    red 0deg 60deg,
+    yellow 60deg 120deg,
+    green 120deg 180deg,
+    blue 180deg 240deg,
+    #82c91e 240deg 300deg,
+    #1098ad 300deg 360deg
+  );
+}
+
+.item {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(0deg) translate(90px);
+}
+
+.item:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(60deg) translate(90px) rotate(-60deg);
+}
+
+.item:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(120deg) translate(90px)
+    rotate(-120deg);
+}
+
+.item:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(180deg) translate(90px)
+    rotate(-180deg);
+}
+
+.item:nth-child(5) {
+  transform: translate(-50%, -50%) rotate(240deg) translate(90px)
+    rotate(-240deg);
+}
+
+.item:nth-child(6) {
+  transform: translate(-50%, -50%) rotate(300deg) translate(90px)
+    rotate(-300deg);
+}
