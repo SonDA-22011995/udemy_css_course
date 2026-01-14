@@ -7,6 +7,12 @@
     - [Internal CSS](#internal-css)
     - [Inline CSS](#inline-css)
   - [STYLING TEXT](#styling-text)
+  - [CSS Variables – `var()` Function (Lecture Explanation)](#css-variables--var-function-lecture-explanation)
+    - [CSS Declare a Variable](#css-declare-a-variable)
+      - [Global variables](#global-variables)
+      - [Local variables](#local-variables)
+    - [The CSS `var()` Function](#the-css-var-function)
+    - [CSS Overriding Variables](#css-overriding-variables)
   - [CSS Selectors](#css-selectors)
     - [CSS Combinators](#css-combinators)
       - [Simple selectors](#simple-selectors)
@@ -83,6 +89,7 @@
   - [GENERAL STYLES](#general-styles)
   - [Building an Accordion Component](#building-an-accordion-component)
     - [Hero icons](#hero-icons)
+    - [ionic icon](#ionic-icon)
     - [Open color](#open-color)
     - [Google font](#google-font)
     - [`line-height`](#line-height)
@@ -123,9 +130,25 @@
     - [`letter-spacing`](#letter-spacing)
     - [Tints and shades generator tool](#tints-and-shades-generator-tool)
     - [Trick add border inside](#trick-add-border-inside)
+    - [`opacity`](#opacity)
     - [`transition`](#transition)
     - [`cubic-bezier`](#cubic-bezier)
     - [CSS Conic Gradients](#css-conic-gradients)
+    - [CSS Remove List-Item Markers](#css-remove-list-item-markers)
+    - [`list-style`](#list-style)
+    - [Remove the underline from a link](#remove-the-underline-from-a-link)
+    - [The Responsive CSS Square Trick (Padding Percentage Technique)](#the-responsive-css-square-trick-padding-percentage-technique)
+    - [`z-index`](#z-index)
+- [Section 4: Responsive web design](#section-4-responsive-web-design)
+  - [Starter CSS code](#starter-css-code)
+  - [How media queries work](#how-media-queries-work)
+  - [Setting The Viewport](#setting-the-viewport)
+  - [CSS Media Queries](#css-media-queries)
+  - [CSS Media Types `mediatype`](#css-media-types-mediatype)
+  - [CSS Media Features `mediafeature`](#css-media-features-mediafeature)
+  - [CSS Conflict Rules with Media Queries](#css-conflict-rules-with-media-queries)
+  - [`rem` and `em` in `@media`](#rem-and-em-in-media)
+  - [Hide element without `display: none`](#hide-element-without-display-none)
 
 # Section 1: CSS FUNDAMENTALS
 
@@ -318,6 +341,74 @@ div.c {
 
 div.d {
   line-height: 200%;
+}
+```
+
+## CSS Variables – `var()` Function (Lecture Explanation)
+
+- CSS Variables, officially called CSS Custom Properties, allow us to store values in reusable variables directly in CSS.
+- They help us:
+  - Avoid repetition
+  - Make styles easier to maintain
+  - Build scalable design systems
+  - Change values globally from one place
+
+### CSS Declare a Variable
+
+- A CSS variable name must begin with two dashes (--) and is case sensitive!
+
+#### Global variables
+
+- Global variables can be accessed through the entire document
+- To create a global variable, declare it inside the `:root` selector. The :root selector matches the document's root element.
+
+```
+:root {
+  --primary-bg-color: green; /* global scope */
+}
+```
+
+#### Local variables
+
+- Local variables can be used only inside the selector where it is declared
+- To create a local variable, declare it inside the selector that is going to use it.
+
+```
+.note {
+  --note-bg: yellow; /* local scope */
+}
+```
+
+### The CSS `var()` Function
+
+- The `var()` function is used to insert the value of a declared CSS variable.
+- Syntax `var(--name, value)`
+  - `name` Required. The variable name (must start with two dashes)
+  - `value` Optional. The fallback value (used if the variable is not found)
+
+```
+:root {
+  --primary-bg-color: #1e90ff;
+  --primary-color: #ffffff;
+}
+
+.container h2 {
+  border-bottom: 2px solid var(--primary-bg-color);
+}
+```
+
+### CSS Overriding Variables
+
+```
+:root {
+  --primary-bg-color: #1e90ff;
+  --primary-color: #ffffff;
+}
+
+.container .note {
+  --primary-bg-color: red; /* local variable will override global */
+  border: 1px solid var(--primary-bg-color);
+  padding: 10px;
 }
 ```
 
@@ -1529,6 +1620,10 @@ grid-template-columns: repeat(2, 60px 1fr);
 
 - https://heroicons.com/
 
+### ionic icon
+
+- https://ionic.io/ionicons/usage
+
 ### Open color
 
 - https://yeun.github.io/open-color/
@@ -2177,6 +2272,20 @@ letter-spacing: normal | <length>;
 box-shadow: inset 0 0 0 3px #fff;
 ```
 
+### `opacity`
+
+- The `opacity` property sets the opacity level for an element.
+
+- The opacity-level describes the transparency-level, where 1 is not transparent at all, 0.5 is 50% see-through, and 0 is completely transparent.
+
+- Syntax: The value must be a number between 0.0 and 1.0
+
+```
+selector {
+  opacity: value;
+}
+```
+
 ### `transition`
 
 - In CSS, transition is used to make changes to CSS properties happen smoothly over time, instead of changing instantly.
@@ -2216,6 +2325,12 @@ transition-duration: 0.5s;
   - cubic-bezier(...) → custom curve
 
 - `delay`: How long to wait before the animation starts. Unit `s` or `ms`
+
+- Properties that do not support CSS transitions by default include:
+  - `display`: An element is either displayed (block, inline, etc.) or it is not (none). There is no partial display state.
+  - `visibility`: An element is either visible or hidden. It cannot be partially visible during a transition.
+  - `position` related properties with auto values: Transitions cannot animate properties with a starting or finishing value of auto.
+  - DOM manipulation properties: Properties that affect the document flow or layout in a sudden, non-gradual way, like `content`, `cursor`, and many others listed as non-animatable in the official specifications.
 
 ### `cubic-bezier`
 
@@ -2307,4 +2422,258 @@ transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background-image: repeating-conic-gradient(red 0deg 10deg, yellow 10deg 20deg, blue 20deg 30deg);
   border-radius: 50%;
 }
+```
+
+### CSS Remove List-Item Markers
+
+- The `list-style:none;` property is used to remove the list-item markers.
+
+```
+list-style:none
+```
+
+### `list-style`
+
+- Property in CSS is a shorthand for setting the `list-style-type`,`list-style-position`, and `list-style-image`
+- Syntax
+
+```
+list-style: <list-style-type> || <list-style-position> || <list-style-image>;
+```
+
+### Remove the underline from a link
+
+```
+a {
+  text-decoration: none;
+}
+```
+
+### The Responsive CSS Square Trick (Padding Percentage Technique)
+
+- The problem: Using percentages for both `width` and `height` does not usually work as expected in responsive layouts:
+- This fails because:
+  - `width`: % is calculated from the parent’s width
+  - `height`: % is calculated from the parent’s height
+- In most responsive layouts, the parent’s height is auto, so the browser cannot compute height: 60%
+- The solution
+
+```
+.square {
+  width: 60%;
+  padding-bottom: 60%;
+}
+```
+
+- Why this works
+  - Key CSS rule:Vertical padding percentage (`padding-top`, `padding-bottom`) are always calculated based on the parent’s width, not height.
+
+```
+| Property                     | Percentage is based on |
+| ---------------------------- | ---------------------- |
+| width                        | Parent width           |
+| padding-top / padding-bottom | Parent width           |
+| padding-left / padding-right | Parent width           |
+
+```
+
+### `z-index`
+
+- The `z-index` property specifies the stack order of an element. An element with greater stack order is always in front of an element with a lower stack order.
+- `z-index` only works on positioned elements (`position: absolute`, `position: relative`, `position: fixed`, or `position: sticky`) and flex items (elements that are direct children of display:flex elements).
+- If two positioned elements overlap without a `z-index` specified, the element positioned last in the HTML code will be shown on top.
+- Syntax `z-index: auto|number|initial|inherit;`
+- Example
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.wrapper {
+  position: relative;
+}
+
+.box1 {
+  position: relative;
+  z-index: 1;
+  border: solid;
+  height: 100px;
+  margin: 50px;
+}
+
+.box2 {
+  position: absolute;
+  z-index: 2;
+  background: pink;
+  width: 20%;
+  left: 65%;
+  top: -25px;
+  height: 120px;
+  opacity: 0.9;
+}
+
+.box3 {
+  position: absolute;
+  z-index: 3;
+  background: cyan;
+  width: 70%;
+  left: 40px;
+  top: 60px;
+}
+</style>
+</head>
+<body>
+
+<h1>The z-index Property</h1>
+
+<div class="wrapper">
+  <div class="box1">Box 1 - has z-index: 1</div>
+  <div class="box2">Box 2 - has z-index: 2 (will be put above .box1)</div>
+  <div class="box3">Box 3 - has z-index: 3 (will be put above .box1 and .box2)</div>
+</div>
+
+</body>
+</html>
+```
+
+# Section 4: Responsive web design
+
+## Starter CSS code
+
+```
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: <font-name>, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+```
+
+## How media queries work
+
+![Diagram](./static/image/lecture_0014.png)
+
+## Setting The Viewport
+
+- The viewport is the user's visible area of a web page.
+- The viewport varies with the device (will be a lot smaller on a mobile phone than on a computer screen).
+- You should include the following `<meta>` element in the `<head>` section of all your web pages:
+
+```
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+- The `width=device-width` part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+
+- The `initial-scale=1.0` part sets the initial zoom level when the page is first loaded by the browser.
+
+## CSS Media Queries
+
+- CSS media queries allow you to apply styles based on the characteristics of a device or the environment displaying the web page.
+- Media Query Syntax:
+  - `not`: The `not` keyword inverts the meaning of an entire media query.
+  - `only`: The `only` keyword prevents older browsers that do not support media queries with media features from applying the specified styles. It has no effect on modern browsers.
+  - `and`: The `and` keyword combines a media feature with a media type or other media features.
+  - They are all optional. However, if you use not or only, you must also specify a media type.
+
+```
+@media not|only mediatype and (mediafeature and|or|not mediafeature) {
+  CSS-Code;
+}
+```
+
+```
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+```
+
+- You can also have different stylesheets for different media, like this:
+
+```
+<link rel="stylesheet" media="screen and (min-width: 900px)" href="widescreen.css">
+<link rel="stylesheet" media="screen and (max-width: 600px)" href="smallscreen.css">
+```
+
+## CSS Media Types `mediatype`
+
+| Value  | Description                                         |
+| ------ | --------------------------------------------------- |
+| all    | Used for all media type devices                     |
+| print  | Used for print preview mode                         |
+| screen | Used for computer screens, tablets, and smartphones |
+
+## CSS Media Features `mediafeature`
+
+- The media feature specifies a specific characteristic of the device.
+
+| Value                | Description                                         |
+| -------------------- | --------------------------------------------------- |
+| max-height           | Maximum height of the viewport                      |
+| min-height           | Minimum height of the viewport                      |
+| height               | Height of the viewport (including scrollbar)        |
+| max-width            | Maximum width of the viewport                       |
+| min-width            | Minimum width of the viewport                       |
+| width                | Width of the viewport (including scrollbar)         |
+| orientation          | Orientation of the viewport (landscape or portrait) |
+| resolution           | Screen resolution                                   |
+| prefers-color-scheme | User's preferred color scheme (light or dark)       |
+
+## CSS Conflict Rules with Media Queries
+
+- `@media` only controls when a CSS rule applies.
+  Which rule wins is still decided by the normal CSS cascade.
+- How the browser applies CSS (in order)
+
+```
+1. Does the media query match?
+   ❌ No → the rule is ignored
+   ✅ Yes → the rule becomes active
+
+2. If multiple active rules conflict, the browser applies:
+   1️⃣ !important
+   2️⃣ Specificity (stronger selector wins)
+   3️⃣ Source order (the rule written later wins)
+```
+
+- Quick reference table
+
+```
+| Factor       | Purpose                      |
+| ------------ | ---------------------------- |
+| `@media`     | Enables or disables rules    |
+| `!important` | Highest priority             |
+| Specificity  | Determines selector strength |
+| Source order | Last rule wins               |
+```
+
+## `rem` and `em` in `@media`
+
+- `rem` and `em` do not depend on html font-size in media queries! Instead, 1rem = 1em = 16px
+
+## Hide element without `display: none`
+
+```
+ /* 1) Hide it visually */
+    opacity: 0;
+
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+
+    /* 3) Hide it from screen readers */
+    visibility: hidden;
+
 ```
